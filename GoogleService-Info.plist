@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>748401192432-rfu398k95b6irbkaqlmu86alsn06jubd.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.748401192432-rfu398k95b6irbkaqlmu86alsn06jubd</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCcnagfe9QS21ZCwyWsQUes_7e3JJ6kJ-E</string>
+	<key>GCM_SENDER_ID</key>
+	<string>748401192432</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>io.browncrumbs.app</string>
+	<key>PROJECT_ID</key>
+	<string>browncrumbs</string>
+	<key>STORAGE_BUCKET</key>
+	<string>browncrumbs.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:748401192432:ios:68840064616ca0c2</string>
+	<key>DATABASE_URL</key>
+	<string>https://browncrumbs.firebaseio.com</string>
+</dict>
+</plist>

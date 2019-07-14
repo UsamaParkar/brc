@@ -1,0 +1,7 @@
+{
+  "name": "browncrumbs",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
