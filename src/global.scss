@@ -27,24 +27,58 @@
 @import "~@ionic/angular/css/flex-utils.css";
 @import "~@ionic/angular/css/display.css";
 
+// Ion-Slides
+ion-slides
+{
+    height: 100%;
+    width: 100%;
+}
 
+// Login Page Image
+.login-page-image
+{
+    position: absolute;
+    height: 50%;
+    bottom: 50%;
+    right: 0%;
+    left: 0%
+}
 
-ion-tab-bar{
+// Bottom Tabs
+ion-tab-bar
+{
     height: 7%;
     color: white;
 }
 
+// Bottom Navigation Tab Label Size
 .tab-labels
 {
     size: small;
 }
 
+// Bottom Navigation Tab Size
 .tab-icons
 {
     size: small;
 }
 
+// Bottom Navigation Tab Color
 .navigation-tabs
 {
-    background-color: black;
+    color: orangered;
+}
+
+// Ion-Toolbar Avatar  
+.top-toolbar-avatar
+{
+  width: 15%;
+}
+
+// Ion-Toolbar Title
+.avatar-toolbar-title
+{
+  position: absolute;
+  top: 35%;
+  left: 15%;
 }
