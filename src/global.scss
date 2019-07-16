@@ -72,13 +72,17 @@ ion-tab-bar
 // Ion-Toolbar Avatar  
 .top-toolbar-avatar
 {
-  width: 15%;
+    position: absolute;
+    width: 15%;
+    left: 1%;
+    top: 0%;
 }
+
 
 // Ion-Toolbar Title
 .avatar-toolbar-title
 {
   position: absolute;
   top: 35%;
-  left: 15%;
+  left: 13%;
 }
