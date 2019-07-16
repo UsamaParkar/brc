@@ -2,25 +2,6 @@
 
 <ion-content>
 
-  <!-- Ion-Slides for the First Page of the App, First Outer Container For Sides -->
-  <ion-slides> 
-
-    <!-- Inner Container for Individual Slides/Images-->
-    <ion-slide *ngFor="let slide of slides">
-
-      <ion-img [src]="slide.img"></ion-img>
-
-    </ion-slide>
-
-    <!-- Slide for Login -->
-    <ion-slide>
-      <!-- Brown Crumbs Logo -->
-      <ion-img src="../assets/img/The Brown Crumbs.jpg" class="login-page-image"></ion-img>
-      
-      <!-- Login Button -->
-      <ion-button (click)="loginButton()" color="orangered">Login</ion-button>
-    </ion-slide>
-
-  </ion-slides>
+  
   
 </ion-content>

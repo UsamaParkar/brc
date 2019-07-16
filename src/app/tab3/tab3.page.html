@@ -9,4 +9,16 @@
 
 <ion-content>
   
+  <!-- Ion-Slides for the First Page of the App, First Outer Container For Sides -->
+  <ion-slides> 
+
+      <!-- Inner Container for Individual Slides/Images-->
+      <ion-slide *ngFor="let slide of slides">
+  
+        <ion-img [src]="slide.img"></ion-img>
+  
+      </ion-slide>
+  
+  </ion-slides>
+
 </ion-content>

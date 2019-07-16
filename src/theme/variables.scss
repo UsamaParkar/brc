@@ -76,6 +76,16 @@
   --ion-color-light-tint: #f5f6f9;
 
   /** Orangered **/
+  .ion-color-orange {
+    --ion-color-base: #FFA500;
+    --ion-color-base-rgb: 255,165,0;
+    --ion-color-contrast: #ffffff;
+    --ion-color-contrast-rgb: 255,255,255;
+    --ion-color-shade: #FF7F50;
+    --ion-color-tint: #78c288;
+  }
+
+  /** Orangered **/
   .ion-color-orangered {
     --ion-color-base: #FF4500;
     --ion-color-base-rgb: 255,69,0;

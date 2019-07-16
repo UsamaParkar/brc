@@ -44,6 +44,40 @@ ion-slides
     left: 0%
 }
 
+.login-form
+{
+    position: absolute;
+    height: 30%;
+    width: 100%;
+    top: 52%
+}
+
+//
+.login-email-field
+{
+    position: absolute;
+    left: 15%;
+    width: 65%;
+    bottom: 75%;
+}
+
+//
+.login-password-field
+{
+    position: absolute;
+    left: 15%;
+    width: 65%;
+    bottom: 45%;
+}
+
+// Login Button
+.loginButton
+{
+    position: absolute;
+    bottom: 23%;
+    left: 40%;
+}
+
 // Bottom Tabs
 ion-tab-bar
 {
@@ -55,27 +89,24 @@ ion-tab-bar
 .tab-labels
 {
     size: small;
+    color: black;
 }
 
 // Bottom Navigation Tab Size
 .tab-icons
 {
+    color: orange;
     size: small;
-}
-
-// Bottom Navigation Tab Color
-.navigation-tabs
-{
-    color: orangered;
 }
 
 // Ion-Toolbar Avatar  
 .top-toolbar-avatar
 {
     position: absolute;
-    width: 15%;
-    left: 1%;
-    top: 0%;
+    height: 90%;
+    width: 13%;
+    left: 2%;
+    top: 5%;
 }
 
 
@@ -85,4 +116,5 @@ ion-tab-bar
   position: absolute;
   top: 35%;
   left: 13%;
+  color: black;
 }
