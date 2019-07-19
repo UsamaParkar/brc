@@ -34,48 +34,36 @@ ion-slides
     width: 100%;
 }
 
-// Login Page Image
-.login-page-image
+// Login Page
+.login-logo
 {
-    position: absolute;
-    height: 50%;
-    bottom: 50%;
-    right: 0%;
-    left: 0%
+    height: 40%;
+    width: 100%;
 }
 
 .login-form
 {
-    position: absolute;
-    height: 30%;
+    height: 100%;
+    width: 100%;   
+}
+
+.login-fields
+{
+    padding: inherit;
     width: 100%;
-    top: 52%
 }
 
-//
-.login-email-field
+// Sign Up Page
+.signup-form
 {
-    position: absolute;
-    left: 15%;
-    width: 65%;
-    bottom: 75%;
+    height: 100%;
+    width: 100%;
 }
 
-//
-.login-password-field
+.signup-fields
 {
-    position: absolute;
-    left: 15%;
-    width: 65%;
-    bottom: 45%;
-}
-
-// Login Button
-.loginButton
-{
-    position: absolute;
-    bottom: 23%;
-    left: 40%;
+    padding: inherit;
+    width: 95%;
 }
 
 // Bottom Tabs
@@ -114,7 +102,44 @@ ion-tab-bar
 .avatar-toolbar-title
 {
   position: absolute;
-  top: 35%;
+  top: 30%;
   left: 13%;
   color: black;
+}
+
+// User Account Avatar
+.account-logo
+{
+    width: 15%;
+}
+
+
+// Products Page
+.products-segment
+{
+    display: flex;
+    justify-content: space-between;
+    height: 50%;
+    width: 100%;
+}
+
+.products-card
+{
+    height: 50%;
+    width: 50%;
+}
+
+.card-titles
+{
+    height: 100%;
+    text-align: center;
+    font-size: initial;
+    font-style: italic;
+}
+
+.card-image
+{
+    display: block;
+    width: 100%;
+    height: 100%;
 }

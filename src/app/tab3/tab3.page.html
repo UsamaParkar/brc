@@ -4,21 +4,42 @@
       <ion-img src="../assets/img/tbc.png"></ion-img>
     </ion-avatar>
     <ion-title class="avatar-toolbar-title">Products</ion-title>
+    <ion-icon (click)="goToAccountPage()" class="account-logo" slot="end" size="large" color="dark" name="contact"></ion-icon>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  
-  <!-- Ion-Slides for the First Page of the App, First Outer Container For Sides -->
-  <ion-slides> 
+<ion-content padding>
 
-      <!-- Inner Container for Individual Slides/Images-->
-      <ion-slide *ngFor="let slide of slides">
+    <ion-segment padding class="products-segment">
+      
+      <ion-card (click)="goToCakes()" class="products-card" mode="md">
+        
+        <img class="card-image" src="../../assets/img/Card Image 1.jpg">
+        
+      </ion-card>
   
-        <ion-img [src]="slide.img"></ion-img>
+      <ion-card class="products-card">
   
-      </ion-slide>
+        <img class="card-image" src="../../assets/img/Cupcake Card Image.jpg">
   
-  </ion-slides>
-
-</ion-content>
+      </ion-card>
+    
+    </ion-segment>
+  
+    <ion-segment padding class="products-segment">
+  
+      <ion-card class="products-card">
+  
+        <img class="card-image" src="../../assets/img/Card Image 3.jpg">
+  
+      </ion-card>
+  
+      <ion-card class="products-card">
+  
+        <img class="card-image" src="../../assets/img/Card Image 4.jpg">
+  
+      </ion-card>
+    
+    </ion-segment>
+  
+  </ion-content>

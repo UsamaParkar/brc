@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-tab3',
@@ -7,22 +8,16 @@ import { Component } from '@angular/core';
 })
 export class Tab3Page {
 
-  slides: { img: string } [] = [
+  constructor(
+    private router: Router) {}
 
-    {
-      img: '../assets/img/TheBrowmCrumbs_Slider_Image_1.jpg',
-    },
-    {
-      img: '../assets/img/TheBrowmCrumbs_Slider_Image_2.jpg',
-    },
-    {
-      img: '../assets/img/TheBrowmCrumbs_Slider_Image_3.jpg',
-    },
-    {
-      img: '../assets/img/TheBrowmCrumbs_Slider_Image_4.jpg',
-    }
-  ];
+  goToAccountPage()
+  // tslint:disable-next-line: one-line
+  {
+    this.router.navigateByUrl('/accountpage');
+  }
 
-  constructor() {}
-
+  goToCakes() {
+    this.router.navigateByUrl('/cakes');
+  }
 }

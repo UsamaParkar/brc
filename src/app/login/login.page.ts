@@ -16,7 +16,11 @@ export class LoginPage implements OnInit {
   loginButton()
   // tslint:disable-next-line: one-line
   {
-    this.router.navigateByUrl('/tabs');
+    this.router.navigateByUrl('tabs');
+  }
+
+  goToSignup() {
+    this.router.navigateByUrl('signup');
   }
 
 }

@@ -4,10 +4,21 @@
       <ion-img src="../assets/img/tbc.png"></ion-img>
     </ion-avatar>
     <ion-title class="avatar-toolbar-title">Customers</ion-title>
+    <ion-icon (click)="goToAccountPage()" class="account-logo" slot="end" size="large" color="dark" name="contact"></ion-icon>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
 
-  
+  <!-- Customer Searchbox-->
+  <ion-segment class="segment-customer-searchbox"><ion-searchbar showCancelButton="focus" placeholder="Search for a Customer"></ion-searchbar></ion-segment>
+
+  <!-- Customer Buttons -->
+  <ion-segment class="customer-buttons">
+
+    <ion-button color="dark"><ion-icon name="person-add"></ion-icon></ion-button>
+
+    <ion-button color="dark"><ion-icon name="contacts"></ion-icon></ion-button>
+
+  </ion-segment>
 </ion-content>

@@ -9,7 +9,11 @@ const routes: Routes = [
   },
   { path: '', loadChildren: './tabs/tabs.module#TabsPageModule' },
   { path: 'welcomepage', loadChildren: './welcomepage/welcomepage.module#WelcomepagePageModule' },
-  { path: 'login', loadChildren: './login/login.module#LoginPageModule' }
+  { path: 'login', loadChildren: './login/login.module#LoginPageModule' },
+  { path: 'accountpage', loadChildren: './accountpage/accountpage.module#AccountpagePageModule' },
+  { path: 'signup', loadChildren: './signup/signup.module#SignupPageModule' },
+  { path: 'cakes', loadChildren: './cakes/cakes.module#CakesPageModule' },
+  { path: 'navigation', loadChildren: './navigation/navigation.module#NavigationPageModule' }
 ];
 @NgModule({
   imports: [

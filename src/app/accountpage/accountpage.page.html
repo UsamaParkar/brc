@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-avatar (click)="goToHome()" class="top-toolbar-avatar">
+      <ion-img src="../assets/img/tbc.png"></ion-img>
+    </ion-avatar>
+    <ion-title class="avatar-toolbar-title">Welcome!</ion-title>
+    <ion-icon (click)="goToAccountPage()" class="account-logo" slot="end" size="large" color="dark" name="contact"></ion-icon>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-item (click)="doLogout()">
+    
+    <ion-label>
+      
+      Log Out
+    
+    </ion-label>
+  
+  </ion-item>
+
+  <ion-item (click)="exitApp()">
+    
+    <ion-label>
+      
+      Exit
+      
+    </ion-label>
+    
+  </ion-item>
+
+</ion-content>
