@@ -1,3 +1,4 @@
+import { AppVersion } from '@ionic-native/app-version/ngx';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -8,7 +9,21 @@ import { Router } from '@angular/router';
 })
 export class LoginPage implements OnInit {
 
-  constructor(private router: Router) { }
+  appVerNum;
+  appName;
+  constructor(
+    private router: Router,
+    private appVersion: AppVersion) {
+      // Code to get Dynamic App Version
+      this.appVersion.getAppName().then((appname) => {
+      this.appName = appname;
+      });
+      this.appVersion.getPackageName();
+      this.appVersion.getVersionCode();
+      this.appVersion.getVersionNumber().then((version) => {
+        this.appVerNum = version;
+      });
+    }
 
   ngOnInit() {
   }
@@ -22,5 +37,4 @@ export class LoginPage implements OnInit {
   goToSignup() {
     this.router.navigateByUrl('signup');
   }
-
 }

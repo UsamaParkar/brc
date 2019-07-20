@@ -43,7 +43,7 @@ ion-slides
 
 .login-form
 {
-    height: 100%;
+    height: 50%;
     width: 100%;   
 }
 
@@ -51,6 +51,12 @@ ion-slides
 {
     padding: inherit;
     width: 100%;
+}
+
+.version-display
+{
+    color: gray;
+    font-style: italic;
 }
 
 // Sign Up Page

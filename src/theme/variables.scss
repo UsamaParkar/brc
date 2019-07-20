@@ -94,4 +94,14 @@
     --ion-color-shade: #FF8C00;
     --ion-color-tint: #78c288;
   }
+
+  /** Gray **/
+  .ion-color-gray {
+    --ion-color-base: #808080;
+    --ion-color-base-rgb: 128,128,128;
+    --ion-color-contrast: #ffffff;
+    --ion-color-contrast-rgb: 255,255,255;
+    --ion-color-shade: #696969;
+    --ion-color-tint: #d3d3d3;
+  }
 }
