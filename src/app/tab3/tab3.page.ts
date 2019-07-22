@@ -14,10 +14,15 @@ export class Tab3Page {
   goToAccountPage()
   // tslint:disable-next-line: one-line
   {
-    this.router.navigateByUrl('/accountpage');
+    this.router.navigateByUrl('accountpage');
   }
 
   goToCakes() {
-    this.router.navigateByUrl('/cakes');
+    this.router.navigateByUrl('cakes');
+  }
+
+  goToCupCakes()
+  {
+    this.router.navigateByUrl('cupcakes')
   }
 }

@@ -16,4 +16,8 @@ export class Tab1Page {
   {
     this.router.navigateByUrl('accountpage');
   }
+
+  goToOrderDetails() {
+    this.router.navigateByUrl('orderdetails');
+  }
 }

@@ -18,4 +18,12 @@ export class Tab2Page {
   {
     this.router.navigateByUrl('accountpage');
   }
+
+  goToCustomer() {
+    this.router.navigateByUrl('existingcustomers');
+  }
+
+  addNewCustomer() {
+    this.router.navigateByUrl('addcustomer');
+  }
 }

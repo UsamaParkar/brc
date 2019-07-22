@@ -13,7 +13,11 @@ const routes: Routes = [
   { path: 'accountpage', loadChildren: './accountpage/accountpage.module#AccountpagePageModule' },
   { path: 'signup', loadChildren: './signup/signup.module#SignupPageModule' },
   { path: 'cakes', loadChildren: './cakes/cakes.module#CakesPageModule' },
-  { path: 'navigation', loadChildren: './navigation/navigation.module#NavigationPageModule' }
+  { path: 'navigation', loadChildren: './navigation/navigation.module#NavigationPageModule' },
+  { path: 'addcustomer', loadChildren: './addcustomer/addcustomer.module#AddcustomerPageModule' },
+  { path: 'existingcustomers', loadChildren: './existingcustomers/existingcustomers.module#ExistingcustomersPageModule' },
+  { path: 'cupcakes', loadChildren: './cupcakes/cupcakes.module#CupcakesPageModule' },
+  { path: 'orderdetails', loadChildren: './orderdetails/orderdetails.module#OrderdetailsPageModule' }
 ];
 @NgModule({
   imports: [

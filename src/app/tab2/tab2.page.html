@@ -16,9 +16,9 @@
   <!-- Customer Buttons -->
   <ion-segment class="customer-buttons">
 
-    <ion-button color="dark"><ion-icon name="person-add"></ion-icon></ion-button>
+    <ion-button (click)="addNewCustomer()" color="dark"><ion-icon name="person-add"></ion-icon></ion-button>
 
-    <ion-button color="dark"><ion-icon name="contacts"></ion-icon></ion-button>
+    <ion-button (click)="goToCustomer()" color="dark"><ion-icon name="contacts"></ion-icon></ion-button>
 
   </ion-segment>
 </ion-content>

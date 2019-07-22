@@ -10,36 +10,65 @@
 
 <ion-content padding>
 
-    <ion-segment padding class="products-segment">
+  <!-- List for Product Categories-->
+  <ion-list padding>
+
+    <!-- Products Line 1-->
+    <ion-segment class="products-segment">
       
+      <!-- Cakes Card -->
       <ion-card (click)="goToCakes()" class="products-card" mode="md">
         
-        <img class="card-image" src="../../assets/img/Card Image 1.jpg">
+        <img class="card-image" src="../../assets/img/Card Image 1.jpeg">
         
       </ion-card>
+      
+      <!-- Cupcakes Card -->
+      <ion-card (click)="goToCupCakes()" class="products-card">
   
-      <ion-card class="products-card">
-  
-        <img class="card-image" src="../../assets/img/Cupcake Card Image.jpg">
-  
-      </ion-card>
-    
-    </ion-segment>
-  
-    <ion-segment padding class="products-segment">
-  
-      <ion-card class="products-card">
-  
-        <img class="card-image" src="../../assets/img/Card Image 3.jpg">
-  
-      </ion-card>
-  
-      <ion-card class="products-card">
-  
-        <img class="card-image" src="../../assets/img/Card Image 4.jpg">
+        <img class="card-image" src="../../assets/img/Cupcake Card Image.jpeg">
   
       </ion-card>
     
     </ion-segment>
+
+    <!-- Line 2 -->
+    <ion-segment class="products-segment">
+      
+      <!-- Dessert in a Jar Card -->
+      <ion-card class="products-card">
   
-  </ion-content>
+        <img class="card-image" src="../../assets/img/Brownies Card Image.jpeg">
+  
+      </ion-card>
+  
+      <ion-card class="products-card">
+  
+        <img class="card-image" src="../../assets/img/Card Image 4.jpeg">
+  
+      </ion-card>
+    
+    </ion-segment>
+
+    <!-- Line 3 -->
+    <ion-segment class="products-segment">
+      
+      <!-- Cakes Card -->
+      <ion-card class="products-card" mode="md">
+          
+        <img class="card-image" src="../../assets/img/Card Image 5.jpeg">
+          
+      </ion-card>
+        
+      <!-- Cupcakes Card -->
+      <ion-card class="products-card">
+  
+        <img class="card-image" src="../../assets/img/Macaroons Card Image.jpeg">
+    
+      </ion-card>
+      
+    </ion-segment>
+
+  </ion-list>
+
+</ion-content>
