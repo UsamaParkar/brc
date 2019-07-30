@@ -1,8 +1,13 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title><b>Customers</b></ion-title>
-  </ion-toolbar>
+    <ion-toolbar>
+        <ion-avatar class="top-toolbar-avatar">
+            <ion-img src="../assets/img/tbc.png"></ion-img>
+        </ion-avatar>
+        <ion-title class="avatar-toolbar-title">Customers</ion-title>
+        <ion-icon (click)="goToAccountPage()" class="account-logo" slot="end" size="large" color="dark" name="contact"></ion-icon>    
+    </ion-toolbar>
 </ion-header>
+
 
 <ion-content>
 

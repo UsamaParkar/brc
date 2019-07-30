@@ -1,9 +1,31 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title><b>Order Details</b></ion-title>
+    <ion-avatar (click)="goToHome()" class="top-toolbar-avatar">
+      <ion-img src="../assets/img/tbc.png"></ion-img>
+    </ion-avatar>
+    <ion-title class="avatar-toolbar-title">Order Details</ion-title>
+    <ion-icon (click)="goToAccountPage()" class="account-logo" slot="end" size="large" color="dark" name="contact"></ion-icon>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content padding>
+
+  <ion-card>
+  
+    <ion-segment><p class="order-details-text">Customer:</p></ion-segment>
+
+    <ion-segment><p class="order-details-text">Product:</p></ion-segment>
+
+    <ion-segment><p class="order-details-text">Size:</p></ion-segment>
+
+    <ion-segment><p class="order-details-text">Delivery Date:</p></ion-segment>
+
+    <ion-segment><p class="order-details-text">Payment:</p></ion-segment>
+
+    <ion-segment><p class="order-details-text">Message:</p></ion-segment>
+
+    <ion-segment><p class="order-details-text">Fondant:</p></ion-segment>
+  
+  </ion-card>
 
 </ion-content>

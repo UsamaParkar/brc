@@ -10,24 +10,51 @@
 
 <ion-content>
 
-  <ion-item (click)="doLogout()">
-    
-    <ion-label>
-      
-      Log Out
-    
-    </ion-label>
-  
-  </ion-item>
+  <ion-segment padding>
 
-  <ion-item (click)="exitApp()">
-    
-    <ion-label>
+    <ion-avatar>
+
+      <ion-img src="../assets/img/tbc.png"></ion-img>
+
+    </ion-avatar>
+
+  </ion-segment>
+
+
+  <ion-list lines="none">
+
+    <ion-item>
       
-      Exit
+        <ion-icon slot="start" size="small" name="help-circle-outline"></ion-icon>
+              
+        <ion-label>Help</ion-label>
+            
+      </ion-item>
+
+    <ion-item>
       
-    </ion-label>
+      <ion-icon slot="start" size="small" name="settings"></ion-icon>
+          
+      <ion-label>Settings</ion-label>
+        
+    </ion-item>
+
+    <ion-item (click)="doLogout()">
+      
+      <ion-icon slot="start" size="small" name="log-out"></ion-icon>
+      
+      <ion-label>Log Out</ion-label>
     
-  </ion-item>
+    </ion-item>
+
+    <ion-item (click)="exitApp()">
+      
+      <ion-icon slot="start" size="small" name="exit"></ion-icon>
+      
+      <ion-label>Exit</ion-label>
+      
+    </ion-item>
+
+  </ion-list>
 
 </ion-content>

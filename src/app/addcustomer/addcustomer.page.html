@@ -1,9 +1,33 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title><b>Add a New Customer</b></ion-title>
+    <ion-avatar (click)="goToHome()" class="top-toolbar-avatar">
+      <ion-img src="../assets/img/tbc.png"></ion-img>
+    </ion-avatar>
+    <ion-title class="avatar-toolbar-title">Add a New Customer</ion-title>
+    <ion-icon (click)="goToAccountPage()" class="account-logo" slot="end" size="large" color="dark" name="contact"></ion-icon>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+
+  <!-- Form for Submitting Details of a New Customer -->
+  <form>
+
+    <!-- List for Looping through each Item for Customer Information -->
+    <ion-list padding>
+
+      <ion-item><ion-input requried="true" placeholder="First Name*"></ion-input></ion-item>
+
+      <ion-item><ion-input requried="true" placeholder="Last Name*"></ion-input></ion-item>
+
+      <ion-item><ion-input requried="true" placeholder="Address*"></ion-input></ion-item>
+
+      <ion-item><ion-input requried="true" placeholder="Mobile Number*"></ion-input></ion-item>
+
+    </ion-list>
+
+    <ion-segment padding><ion-button color="dark">Submit</ion-button></ion-segment>
+
+  </form>
 
 </ion-content>

@@ -16,14 +16,14 @@ export class Tab2Page {
   goToAccountPage()
   // tslint:disable-next-line: one-line
   {
-    this.router.navigateByUrl('accountpage');
+    this.router.navigateByUrl('/accountpage');
   }
 
   goToCustomer() {
-    this.router.navigateByUrl('existingcustomers');
+    this.router.navigateByUrl('/existingcustomers');
   }
 
   addNewCustomer() {
-    this.router.navigateByUrl('addcustomer');
+    this.router.navigateByUrl('/addcustomer');
   }
 }

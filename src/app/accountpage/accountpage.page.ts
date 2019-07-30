@@ -18,9 +18,11 @@ export class AccountpagePage implements OnInit {
   ngOnInit() {
   }
 
+  // Logo to Home Router
   goToHome() {
     this.router.navigateByUrl('/tabs');
   }
+
   // LogOut Component
   async doLogout() {
     const alert = await this.alertController.create({
@@ -68,5 +70,4 @@ export class AccountpagePage implements OnInit {
      });
      return alert.present();
    }
-// tslint:disable-next-line: eofline
 }

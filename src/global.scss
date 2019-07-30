@@ -37,7 +37,7 @@ ion-slides
 // Login Page
 .login-logo
 {
-    height: 40%;
+    height: 30%;
     width: 100%;
 }
 
@@ -123,6 +123,21 @@ ion-tab-bar
 .account-logo
 {
     width: 15%;
+}
+
+// Orders Page
+.current-order-segment
+{
+    display: flex;
+    justify-content: space-between;
+}
+
+// Order Details Page
+.order-details-text
+{
+    text-align: left;
+    width: inherit;
+    padding-left: 5%;
 }
 
 

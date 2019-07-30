@@ -21,8 +21,7 @@ export class Tab3Page {
     this.router.navigateByUrl('cakes');
   }
 
-  goToCupCakes()
-  {
-    this.router.navigateByUrl('cupcakes')
+  goToCupCakes() {
+    this.router.navigateByUrl('cupcakes');
   }
 }

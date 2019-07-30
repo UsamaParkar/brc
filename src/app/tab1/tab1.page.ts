@@ -11,13 +11,11 @@ export class Tab1Page {
   constructor(
     private router: Router) {}
 
-  goToAccountPage()
-  // tslint:disable-next-line: one-line
-  {
-    this.router.navigateByUrl('accountpage');
+  goToAccountPage() {
+    this.router.navigateByUrl('/accountpage');
   }
 
   goToOrderDetails() {
-    this.router.navigateByUrl('orderdetails');
+    this.router.navigateByUrl('/orderdetails');
   }
 }

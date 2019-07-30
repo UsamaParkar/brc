@@ -1,6 +1,7 @@
 import { AppVersion } from '@ionic-native/app-version/ngx';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy, AfterViewInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Platform, AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-login',
@@ -9,11 +10,15 @@ import { Router } from '@angular/router';
 })
 export class LoginPage implements OnInit {
 
+  backButtonSubscription; // for storing the returned subscription
   appVerNum;
   appName;
+
   constructor(
     private router: Router,
-    private appVersion: AppVersion) {
+    private platform: Platform,
+    private appVersion: AppVersion,
+    private alertController: AlertController) {
       // Code to get Dynamic App Version
       this.appVersion.getAppName().then((appname) => {
       this.appName = appname;
@@ -28,13 +33,12 @@ export class LoginPage implements OnInit {
   ngOnInit() {
   }
 
-  loginButton()
-  // tslint:disable-next-line: one-line
-  {
+  loginButton() {
     this.router.navigateByUrl('tabs');
   }
 
   goToSignup() {
     this.router.navigateByUrl('signup');
   }
+
 }
