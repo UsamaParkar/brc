@@ -34,4 +34,24 @@
 
   </ion-card>
 
+  <!-- Calendar For Keeping Track of Orders -->
+  <ion-card style="width: 95%;">
+    
+    <calendar
+      
+      [eventSource]="eventSource"
+      [calendarMode]="calendar.mode"
+      [currentDate]="calendar.currentDate"
+      (onEventSelected)="onEventSelected($event)"
+      (onTitleChanged)="onViewTitleChanged($event)"
+      (onTimeSelected)="onTimeSelected($event)"
+      startHour="0"
+      endHour="24"
+      step="30"
+      startingDayWeek="1">
+
+    </calendar>
+
+  </ion-card>
+
 </ion-content>

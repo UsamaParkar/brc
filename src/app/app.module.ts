@@ -5,6 +5,7 @@ import { RouteReuseStrategy } from '@angular/router';
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
+import { Calendar } from '@ionic-native/calendar/ngx';
 
 import { AppVersion } from '@ionic-native/app-version/ngx';
 import { AppRoutingModule } from './app-routing.module';
@@ -18,6 +19,7 @@ import { AppComponent } from './app.component';
     StatusBar,
     SplashScreen,
     AppVersion,
+    Calendar,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

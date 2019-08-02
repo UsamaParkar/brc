@@ -24,4 +24,21 @@ export class Tab3Page {
   goToCupCakes() {
     this.router.navigateByUrl('cupcakes');
   }
+
+  goToBrownies() {
+    this.router.navigateByUrl('brownies');
+  }
+
+  goToDessertJar() {
+    this.router.navigateByUrl('dessertjar');
+  }
+
+  goToCookies() {
+    this.router.navigateByUrl('cookies');
+  }
+
+  goToMacarons() {
+    this.router.navigateByUrl('macarons');
+  }
+
 }
