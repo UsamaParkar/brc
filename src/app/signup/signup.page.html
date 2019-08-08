@@ -21,6 +21,52 @@
     <!-- Password Field -->
     <ion-item class="signup-fields"><ion-input name="password" type="password" placeholder="Enter your Password"></ion-input></ion-item>
 
+    <!-- Card for Type of Access to the Account -->
+    <ion-segment style="height: 25%; display: flex; justify-content: space-between;" padding>
+
+      <ion-radio-group style="display: flex; width: 100%;" mode="ios">
+
+        <!-- Select Option -->
+        
+        
+        <!-- Card 1 Free Access Card -->
+        <ion-card class="account-access-type" color="dark">
+
+          <!-- Text For Card -->
+          <p>Standard</p>
+          
+          <!-- Radio Option To Select Access -->
+          <ion-radio class="signup-card-radio-btn" color="warning"></ion-radio>
+          
+          <!-- Ribbon For Card -->
+          <div class="card-corner-ribbon" style="background: brown">Standard</div>
+
+          <!-- Popup for Card Information Details-->
+          <p (click)="standardAccountInfo()"><i>Read More</i></p>
+        
+        </ion-card>
+
+        
+        <!-- Card 2 Privacy Card -->
+        <ion-card class="account-access-type" color="dark">
+
+          <!-- Text For Card -->
+          <p>Premium</p>
+
+          <!-- Radio Option To Select Access -->
+          <ion-radio class="signup-card-radio-btn" color="warning"></ion-radio>
+          
+          <div class="card-corner-ribbon" style="background: #7cd6d1;">Premium</div>
+
+          <!-- Popup for Card Information Details-->
+          <p (click)="premiumAccountInfo()"><i>Read More</i></p>
+
+        </ion-card>
+    
+      </ion-radio-group>
+
+    </ion-segment>
+    
     <!-- Submit Form Button -->
     <ion-segment padding><ion-button (click)="goToLogin()" color="dark">Sign Up</ion-button></ion-segment>
 

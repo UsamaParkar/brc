@@ -78,6 +78,60 @@ ion-slides
     width: 95%;
 }
 
+.account-access-type
+{
+    width: 45%;
+}
+
+.signup-card-radio-btn
+{
+    display: flex;
+    left: 5%;
+    --color: white;
+    --color-checked: gold;
+}
+
+.card-corner-ribbon
+{
+    width: 65%;
+    position: absolute;
+    top: 77%;
+    font-size: 10px;
+    left: 55%;
+    text-align: center;
+    color: black;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+}
+
+.standardAccountInfo-modal
+{
+    height: 70%;
+    width: 90%;
+    left: 5%;
+    top: 10%;
+}
+
+
+.premiumAccountInfo-modal
+{
+    height: 70%;
+    width: 90%;
+    left: 5%;
+    top: 10%;
+}
+
+.corner-ribbon {
+    width: 30%;
+    position: absolute;
+    top: 35%;
+    right: 78%;
+    text-align: left;
+    color: black;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+  }
+
 // Bottom Tabs
 ion-tab-bar
 {
