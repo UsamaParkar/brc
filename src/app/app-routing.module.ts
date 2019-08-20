@@ -22,7 +22,6 @@ const routes: Routes = [
   { path: 'dessertjar', loadChildren: './dessertjar/dessertjar.module#DessertjarPageModule' },
   { path: 'cookies', loadChildren: './cookies/cookies.module#CookiesPageModule' },
   { path: 'macarons', loadChildren: './macarons/macarons.module#MacaronsPageModule' },
-  { path: 'neworder', loadChildren: './neworder/neworder.module#NeworderPageModule' },
   { path: 'standardaccountinfo', loadChildren: './standardaccountinfo/standardaccountinfo.module#StandardaccountinfoPageModule' },
   { path: 'premiumaccountinfo', loadChildren: './premiumaccountinfo/premiumaccountinfo.module#PremiumaccountinfoPageModule' },
 ];

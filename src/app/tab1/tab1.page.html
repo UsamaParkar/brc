@@ -13,31 +13,52 @@
   <!-- Button For Existing Order -->
   <ion-card (click)="goToOrderDetails()" padding color="orange">
 
-    <ion-card-title padding color="white"><b>Current Order: Customer</b></ion-card-title>
+    <ion-card-title padding style="color: black;"><b>Current Order:</b></ion-card-title>
 
     <ion-segment class="current-order-segment">
       
-      <ion-card-subtitle padding>Product: </ion-card-subtitle>
+      <ion-card-subtitle style="color: black;" padding>Product: </ion-card-subtitle>
 
-      <ion-card-subtitle padding>Size: </ion-card-subtitle>
+      <ion-card-subtitle style="color: black;" padding>Size: </ion-card-subtitle>
     
     </ion-segment>  
 
     <ion-segment class="current-order-segment">
   
-      <ion-card-subtitle padding>Delivery Date: </ion-card-subtitle>
+      <ion-card-subtitle style="color: black;" padding>Delivery Date: </ion-card-subtitle>
 
       
-      <ion-card-subtitle padding>Payment: </ion-card-subtitle>
+      <ion-card-subtitle style="color: black;" padding>Payment: </ion-card-subtitle>
 
     </ion-segment>
 
   </ion-card>
 
   <!-- Calendar For Keeping Track of Orders -->
-  <ion-card style="width: 95%;">
+  <ion-card class="ion-card-for-calendar">
     
-    <calendar
+    <!-- Segment for Calendar Title -->
+    <ion-segment style="display: flex; justify-content:space-between; background-color: black;">
+      
+      <!-- Calendar Title -->
+      <ion-card-header style="color: white;">Orders Schedule</ion-card-header>
+
+      <!-- Button for Adding New Order -->
+      <ion-button size="small" color="dark" tappable (click)="goToNewOrder()" style="margin-top: 10px; margin-right: 10px;">
+          
+        <ion-icon name="add"></ion-icon>
+        
+      </ion-button>
+
+    </ion-segment>
+    <!-- End of First Segment for Calendar -->
+
+
+    <!-- Month -->
+    <ion-item><b>{{ viewTitle }}</b></ion-item>
+    
+    <!-- Calendar Component -->
+    <calendar class="monthview-selected"
       
       [eventSource]="eventSource"
       [calendarMode]="calendar.mode"

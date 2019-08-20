@@ -7,10 +7,10 @@
   <form class="login-form" padding>
 
     <!-- Login Email ID Field -->
-    <ion-item class="login-fields"><ion-input type="email" placeholder="Enter Your Email"></ion-input></ion-item>
+    <ion-item class="login-fields" lines="none"><ion-icon slot="start" name="person" color="dark"></ion-icon><ion-input type="email" placeholder="Enter Your Email"></ion-input></ion-item>
     
     <!-- Login Password Field -->
-    <ion-item class="login-fields"><ion-input type="password" placeholder="Enter Your Password"></ion-input></ion-item>
+    <ion-item class="login-fields" lines="none"><ion-icon slot="start" name="key" color="dark"></ion-icon><ion-input type="password" placeholder="Enter Your Password"></ion-input></ion-item>
 
     <!-- Login Button -->
     <ion-segment padding><ion-button (click)="loginButton()" color="orange">Login</ion-button></ion-segment>

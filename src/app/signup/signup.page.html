@@ -6,20 +6,19 @@
 
 <ion-content>
 
-  
   <!-- Signup Form -->
   <form class="signup-form" padding>
     <!-- First Name Field -->
-    <ion-item class="signup-fields"><ion-input name="first_name" type="text" placeholder="Enter your First Name"></ion-input></ion-item>
+    <ion-item class="signup-fields" lines="none"><ion-icon slot="start" name="person" color="dark"></ion-icon><ion-input name="first_name" type="text" placeholder="Enter your First Name"></ion-input></ion-item>
 
     <!-- Second Name Field -->
-    <ion-item class="signup-fields"><ion-input name="second_name" type="text" placeholder="Enter your Last Name"></ion-input></ion-item>
+    <ion-item class="signup-fields" lines="none"><ion-icon slot="start" name="people" color="dark"></ion-icon><ion-input name="second_name" type="text" placeholder="Enter your Last Name"></ion-input></ion-item>
 
     <!-- Email Field -->
-    <ion-item class="signup-fields"><ion-input name="email" type="email" placeholder="Enter your Email"></ion-input></ion-item>
+    <ion-item class="signup-fields" lines="none"><ion-icon slot="start" name="mail" color="dark"></ion-icon><ion-input name="email" type="email" placeholder="Enter your Email"></ion-input></ion-item>
 
     <!-- Password Field -->
-    <ion-item class="signup-fields"><ion-input name="password" type="password" placeholder="Enter your Password"></ion-input></ion-item>
+    <ion-item class="signup-fields" lines="none"><ion-icon slot="start" name="key" color="dark"></ion-icon><ion-input name="password" type="password" placeholder="Enter your Password"></ion-input></ion-item>
 
     <!-- Card for Type of Access to the Account -->
     <ion-segment style="height: 25%; display: flex; justify-content: space-between;" padding>
@@ -42,7 +41,7 @@
           <div class="card-corner-ribbon" style="background: brown">Standard</div>
 
           <!-- Popup for Card Information Details-->
-          <p (click)="standardAccountInfo()"><i>Read More</i></p>
+          <p (click)="standardAccountInfo()"><i><u>Read More</u></i></p>
         
         </ion-card>
 
@@ -59,7 +58,7 @@
           <div class="card-corner-ribbon" style="background: #7cd6d1;">Premium</div>
 
           <!-- Popup for Card Information Details-->
-          <p (click)="premiumAccountInfo()"><i>Read More</i></p>
+          <p (click)="premiumAccountInfo()"><i><u>Read More</u></i></p>
 
         </ion-card>
     
@@ -85,7 +84,5 @@
     </ion-segment>
   
   </form>
-  
-  <!--<ion-img class="login-background-image" src="../assets/img/Login Form Background Image.png"></ion-img>-->
-  
+    
 </ion-content>
