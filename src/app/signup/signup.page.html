@@ -54,13 +54,8 @@
       
     </ion-item>
 
-    <!-- Submit Form Button -->
-    <ion-segment padding><ion-button (click)="signUp()" color="dark">Sign Up</ion-button></ion-segment>
-
-  </form>
-
     <!-- Card for Type of Access to the Account -->
-    <ion-segment style="height: 25%; display: flex; justify-content: space-between;" padding>
+    <ion-segment style="height: 35%; display: flex; justify-content: space-between;" padding>
 
       <ion-radio-group style="display: flex; width: 100%;" mode="ios">
 
@@ -104,7 +99,12 @@
       </ion-radio-group>
 
     </ion-segment>
-    
+  
+    <!-- Submit Form Button -->
+    <ion-segment padding><ion-button (click)="signUp()" color="dark">Sign Up</ion-button></ion-segment>
+
+  </form>
+
     <!-- Redirect to Login -->
     <ion-segment><p>Already have an Account?<a (click)="goToLogin()">Login</a></p></ion-segment>
     
