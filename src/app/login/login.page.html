@@ -1,20 +1,38 @@
 <ion-content>
 
   <!-- Brown Crumbs Logo -->
-  <ion-segment padding class="login-logo"><ion-img src="../assets/img/The Brown Crumbs.jpg" class="login-page-image"></ion-img></ion-segment>
+  <ion-segment padding class="login-logo">
+    
+    <ion-img src="../assets/img/The Brown Crumbs.jpg" class="login-page-image"></ion-img>
+  
+  </ion-segment>
       
   <!-- Login Details Field -->
   <form class="login-form" padding>
 
     <!-- Login Email ID Field -->
-    <ion-item class="login-fields" lines="none"><ion-icon slot="start" name="person" color="dark"></ion-icon><ion-input type="email" placeholder="Enter Your Email"></ion-input></ion-item>
+    <ion-item class="login-fields" lines="none">
+      
+      <ion-icon slot="start" name="person" color="dark"></ion-icon>
+      
+      <ion-input [(ngModel)]="email" name="email" type="email" placeholder="Enter Your Email"></ion-input>
+    
+    </ion-item>
     
     <!-- Login Password Field -->
-    <ion-item class="login-fields" lines="none"><ion-icon slot="start" name="key" color="dark"></ion-icon><ion-input type="password" placeholder="Enter Your Password"></ion-input></ion-item>
+    <ion-item class="login-fields" lines="none">
+      
+      <ion-icon slot="start" name="key" color="dark"></ion-icon>
+      
+      <ion-input [(ngModel)]="password" name="password" type="password" placeholder="Enter Your Password"></ion-input>
+    
+    </ion-item>
 
     <!-- Login Button -->
     <ion-segment padding><ion-button (click)="loginButton()" color="orange">Login</ion-button></ion-segment>
 
+  </form>
+  
     <!-- Segment for Social Logins -->
     <ion-segment>
 
@@ -29,7 +47,6 @@
     <!-- Sign Up Segment-->
     <p style="text-align: center;">New to Brown Crumbs?<a (click)="goToSignup()">Sign Up!</a></p>
 
-  </form>
   
   <!-- App Name & App Version -->
   <br><br>

@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
 import { StandardaccountinfoPage } from '../standardaccountinfo/standardaccountinfo.page';
 import { PremiumaccountinfoPage } from '../premiumaccountinfo/premiumaccountinfo.page';
+import { AngularFireAuth } from '@angular/fire/auth';
+import { auth } from 'firebase/app';
 
 @Component({
   selector: 'app-signup',
@@ -11,13 +13,35 @@ import { PremiumaccountinfoPage } from '../premiumaccountinfo/premiumaccountinfo
 })
 export class SignupPage implements OnInit {
 
+  // Variables for Signup
+  email: '';
+  password: '';
+  // tslint:disable-next-line: variable-name
+  confirm_password: '';
+
   constructor(
     private router: Router,
+    public afAuth: AngularFireAuth,
     private modalController: ModalController) { }
 
   ngOnInit() {
   }
 
+  signUp() {
+    const { email, password, confirm_password } = this;
+    if ( password !== confirm_password ) {
+      return console.error('Passwords dont match');
+    }
+    try {
+      const res = this.afAuth.auth.createUserWithEmailAndPassword(email, password);
+      console.log(res);
+    } catch (error) {
+        console.dir(error);
+    }
+  }
+
+
+  // Route to Login If User has an Account
   goToLogin() {
     this.router.navigateByUrl('login');
   }

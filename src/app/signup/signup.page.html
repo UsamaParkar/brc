@@ -8,17 +8,56 @@
 
   <!-- Signup Form -->
   <form class="signup-form" padding>
+    
     <!-- First Name Field -->
-    <ion-item class="signup-fields" lines="none"><ion-icon slot="start" name="person" color="dark"></ion-icon><ion-input name="first_name" type="text" placeholder="Enter your First Name"></ion-input></ion-item>
+    <!-- <ion-item class="signup-fields" lines="none">
+      
+      <ion-icon slot="start" name="person" color="dark"></ion-icon>
+      
+      <ion-input [(ngModel)]="first_name" name="first_name" type="text" placeholder="Enter your First Name"></ion-input>
+    
+    </ion-item> -->
 
     <!-- Second Name Field -->
-    <ion-item class="signup-fields" lines="none"><ion-icon slot="start" name="people" color="dark"></ion-icon><ion-input name="second_name" type="text" placeholder="Enter your Last Name"></ion-input></ion-item>
+    <!-- <ion-item class="signup-fields" lines="none">
+      
+      <ion-icon slot="start" name="people" color="dark"></ion-icon>
+      
+      <ion-input [(ngModel)]="second_name" name="second_name" type="text" placeholder="Enter your Last Name"></ion-input>
+    
+    </ion-item> -->
 
     <!-- Email Field -->
-    <ion-item class="signup-fields" lines="none"><ion-icon slot="start" name="mail" color="dark"></ion-icon><ion-input name="email" type="email" placeholder="Enter your Email"></ion-input></ion-item>
+    <ion-item class="signup-fields" lines="none">
+      
+      <ion-icon slot="start" name="mail" color="dark"></ion-icon>
+      
+      <ion-input [(ngModel)]="email" name="email" type="email" placeholder="Enter your Email"></ion-input>
+    
+    </ion-item>
 
     <!-- Password Field -->
-    <ion-item class="signup-fields" lines="none"><ion-icon slot="start" name="key" color="dark"></ion-icon><ion-input name="password" type="password" placeholder="Enter your Password"></ion-input></ion-item>
+    <ion-item class="signup-fields" lines="none">
+      
+      <ion-icon slot="start" name="key" color="dark"></ion-icon>
+      
+      <ion-input [(ngModel)]="password" name="password" type="password" placeholder="Enter your Password"></ion-input>
+    
+    </ion-item>
+
+    <!-- Password Field -->
+    <ion-item class="signup-fields" lines="none">
+      
+      <ion-icon slot="start" name="key" color="dark"></ion-icon>
+      
+      <ion-input [(ngModel)]="confirm_password" name="confirm_password" type="password" placeholder="Confirm your Password"></ion-input>
+      
+    </ion-item>
+
+    <!-- Submit Form Button -->
+    <ion-segment padding><ion-button (click)="signUp()" color="dark">Sign Up</ion-button></ion-segment>
+
+  </form>
 
     <!-- Card for Type of Access to the Account -->
     <ion-segment style="height: 25%; display: flex; justify-content: space-between;" padding>
@@ -66,9 +105,6 @@
 
     </ion-segment>
     
-    <!-- Submit Form Button -->
-    <ion-segment padding><ion-button (click)="goToLogin()" color="dark">Sign Up</ion-button></ion-segment>
-
     <!-- Redirect to Login -->
     <ion-segment><p>Already have an Account?<a (click)="goToLogin()">Login</a></p></ion-segment>
     
@@ -82,7 +118,5 @@
       <ion-button color="twitter"><ion-icon name="logo-twitter"></ion-icon></ion-button>
     
     </ion-segment>
-  
-  </form>
     
 </ion-content>

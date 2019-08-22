@@ -59,6 +59,11 @@ ion-slides
     top: 0%;
 }
 
+.login-toast
+{
+    --button-color: darkorange;
+}
+
 .version-display
 {
     color: gray;
@@ -211,7 +216,6 @@ ion-tab-bar
 .monthview-selected 
 {
     background-color:#000000 !important;
-    font-weight:bold !important;
 }
 
 // Products Page
