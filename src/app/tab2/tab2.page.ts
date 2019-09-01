@@ -1,5 +1,5 @@
+import { DataserviceService } from '../services/dataservice.service';
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-tab2',
@@ -8,22 +8,15 @@ import { Router } from '@angular/router';
 })
 export class Tab2Page {
 
-  constructor(
-    private router: Router
-  ) {}
+  constructor( private dataService: DataserviceService ) { }
 
   // Route to Account
-  goToAccountPage()
-  // tslint:disable-next-line: one-line
-  {
-    this.router.navigateByUrl('/accountpage');
-  }
+  goToAccountPage() { this.dataService.goToAccountPage(); }
 
-  goToCustomer() {
-    this.router.navigateByUrl('/existingcustomers');
-  }
+  // Route to Customer's Page
+  goToCustomer() { this.dataService.goToCustomer(); }
 
-  addNewCustomer() {
-    this.router.navigateByUrl('/addcustomer');
-  }
+  // Route to Add a New Customer
+  addNewCustomer() { this.dataService.addNewCustomer(); }
+
 }

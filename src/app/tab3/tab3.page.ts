@@ -1,5 +1,5 @@
+import { DataserviceService } from '../services/dataservice.service';
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-tab3',
@@ -8,37 +8,27 @@ import { Router } from '@angular/router';
 })
 export class Tab3Page {
 
-  constructor(
-    private router: Router) {}
+  constructor( private dataService: DataserviceService ) {}
 
-  goToAccountPage()
-  // tslint:disable-next-line: one-line
-  {
-    this.router.navigateByUrl('accountpage');
-  }
+  // Navigate to Account Page
+  goToAccountPage() { this.dataService.goToAccountPage(); }
 
-  goToCakes() {
-    this.router.navigateByUrl('cakes');
-  }
+  // Navigate to Cakes Page
+  goToCakes() { this.dataService.goToCakes(); }
 
-  goToCupCakes() {
-    this.router.navigateByUrl('cupcakes');
-  }
+  // Navigate to Cupcakes Page
+  goToCupCakes() { this.dataService.goToCupCakes(); }
 
-  goToBrownies() {
-    this.router.navigateByUrl('brownies');
-  }
+  // Navigate to Brownies Page
+  goToBrownies() { this.dataService.goToBrownies(); }
 
-  goToDessertJar() {
-    this.router.navigateByUrl('dessertjar');
-  }
+  // Navigate to DessertJar Page
+  goToDessertJar() { this.dataService.goToDessertJar(); }
 
-  goToCookies() {
-    this.router.navigateByUrl('cookies');
-  }
+  // Navigate to Cookies Page
+  goToCookies() { this.dataService.goToCookies(); }
 
-  goToMacarons() {
-    this.router.navigateByUrl('macarons');
-  }
+  // Navigate to Macarons Page
+  goToMacarons() { this.dataService.goToMacarons(); }
 
 }

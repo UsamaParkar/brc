@@ -11,7 +11,7 @@
 <ion-content>
 
   <!-- Customer Searchbox-->
-    <ion-searchbar padding showCancelButton="focus" placeholder="Search for a Customer">
+    <ion-searchbar ionChange="getUser()" showCancelButton="focus" placeholder="Search for a Customer" mode="ios" padding>
       
     </ion-searchbar>
 
@@ -23,4 +23,5 @@
     <ion-button (click)="goToCustomer()" color="dark"><ion-icon name="contacts"></ion-icon></ion-button>
 
   </ion-segment>
+
 </ion-content>

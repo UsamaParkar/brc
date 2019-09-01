@@ -5,6 +5,7 @@ import { StandardaccountinfoPage } from '../standardaccountinfo/standardaccounti
 import { PremiumaccountinfoPage } from '../premiumaccountinfo/premiumaccountinfo.page';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { auth } from 'firebase/app';
+import { DataserviceService } from '../services/dataservice.service';
 
 @Component({
   selector: 'app-signup',
@@ -20,10 +21,10 @@ export class SignupPage implements OnInit {
   confirm_password: '';
 
   constructor(
-    private router: Router,
     public afAuth: AngularFireAuth,
     public toastController: ToastController,
-    private modalController: ModalController) { }
+    private modalController: ModalController,
+    private dataService: DataserviceService) { }
 
   ngOnInit() {
   }
@@ -31,59 +32,14 @@ export class SignupPage implements OnInit {
   async signUp() {
     const { email, password, confirm_password } = this;
 
-    // No Email Toast Controller
-    const PasswordsDontMatch = await this.toastController.create({
-      message: 'Passwords dont match',
-      position: 'middle',
-      showCloseButton: true,
-      closeButtonText: 'Okay',
-      cssClass: 'login-toast'
-    });
-
-    // No Email Toast Controller
-    const NoPassword = await this.toastController.create({
-      message: 'Please Enter Password',
-      position: 'middle',
-      showCloseButton: true,
-      closeButtonText: 'Okay',
-      cssClass: 'login-toast'
-    });
-
-    // Invalid Email Toast Controller
-    const InvalidEmail = await this.toastController.create({
-      message: 'Please enter a valid Email',
-      position: 'middle',
-      showCloseButton: true,
-      closeButtonText: 'Okay',
-      cssClass: 'login-toast'
-    });
-
-    // Weak Password Toast Controller
-    const WeakPassword = await this.toastController.create({
-      message: 'Weak Password. Should be atleast 6 characters',
-      position: 'middle',
-      showCloseButton: true,
-      closeButtonText: 'Okay',
-      cssClass: 'login-toast'
-    });
-
-    // User Created Toast Controller
-    const UserCreated = await this.toastController.create({
-      message: 'Congrats! Your Account has been created!',
-      position: 'middle',
-      showCloseButton: true,
-      closeButtonText: 'Okay',
-      cssClass: 'login-toast'
-    });
-
-
     if ( password !== confirm_password ) {
-      PasswordsDontMatch.present();
+      const msg = 'Passwords dont match';
+      this.dataService.Toast(msg);
       return console.error('Passwords dont match');
     }
     try {
       const res = this.afAuth.auth.createUserWithEmailAndPassword(email, password);
-      UserCreated.present();
+      // UserCreated.present();
       console.log('Success', res);
     } catch (error) {
         console.dir(error);
@@ -91,35 +47,38 @@ export class SignupPage implements OnInit {
         // Catch Error Conditions
         // Condition 1 - Empty Password Field
         if ( error.message === 'createUserWithEmailAndPassword failed: Second argument "password" must be a valid string.' ) {
-          NoPassword.present();
+          this.dataService.Toast(error.message);
           console.log('Password Not Entered');
         }
 
-        // Condition 2 - Invalid Email Format
-        // tslint:disable-next-line: one-line
+        // tslint:disable-next-line: one-line // Condition 2 - Invalid Email Format
         else if ( error.message === 'The email address is badly formatted.' ) {
-          InvalidEmail.present();
+          this.dataService.Toast(error.message);
           console.log('Invalid Email');
         }
 
-        // Condition 3 - Weak Password
-        // tslint:disable-next-line: one-line
+        // tslint:disable-next-line: one-line // Condition 3 - Weak Password
         else if ( error.message === 'Password should be at least 6 characters' ) {
-          WeakPassword.present();
+          this.dataService.Toast(error.message);
           console.log('Weak Password. Should be atleast 6 characters.');
         }
+
+        // tslint:disable-next-line: one-line // Condition 4 - Email Already in Use
+        else if ( error.message === 'The email address is already in use by another account' ) {
+          this.dataService.Toast(error.message);
+          console.log('The email address is already in use by another account');
+        } else {
+          this.dataService.Toast(error.message);
+          console.log('Uknown Error');
+      }
     }
   }
 
 
-  // Route to Login If User has an Account
-  goToLogin() {
-    this.router.navigateByUrl('login');
-  }
-
   // Modal for Standard Account Access Information
   async standardAccountInfo() {
     const modal = await this.modalController.create({
+      mode: 'ios',
       component: StandardaccountinfoPage,
       cssClass: 'standardAccountInfo-modal',
       backdropDismiss: true,
@@ -129,9 +88,11 @@ export class SignupPage implements OnInit {
     return await modal.present();
    }
 
+
   // Modal for Premium Account Access Information
   async premiumAccountInfo() {
     const modal = await this.modalController.create({
+      mode: 'ios',
       component: PremiumaccountinfoPage,
       cssClass: 'premiumAccountInfo-modal',
       backdropDismiss: true,
@@ -140,5 +101,11 @@ export class SignupPage implements OnInit {
     });
     return await modal.present();
    }
+
+
+  // Route to Login If User has an Account
+  goToLogin() {
+    this.dataService.goToLogin();
+  }
 
 }

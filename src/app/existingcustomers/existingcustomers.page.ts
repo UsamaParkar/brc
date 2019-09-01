@@ -1,5 +1,5 @@
+import { DataserviceService } from '../services/dataservice.service';
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-existingcustomers',
@@ -9,19 +9,14 @@ import { Router } from '@angular/router';
 export class ExistingcustomersPage implements OnInit {
 
   constructor(
-    private router: Router) {}
+    private dataService: DataserviceService) { }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   // Logo to Home Router
-  goToHome() {
-    this.router.navigateByUrl('/tabs');
-  }
+  goToHome() { this.dataService.goToHome(); }
 
-  // Account Icon Navigation
-  goToAccountPage() {
-    this.router.navigateByUrl('accountpage');
-  }
+  // Go to Account Page Icon
+  goToAccountPage() { this.dataService.goToAccountPage(); }
 
 }

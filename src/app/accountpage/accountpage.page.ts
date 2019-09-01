@@ -1,6 +1,5 @@
+import { DataserviceService } from '../services/dataservice.service';
 import { Component, OnInit } from '@angular/core';
-import { LoadingController, AlertController } from '@ionic/angular';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-accountpage',
@@ -10,9 +9,7 @@ import { Router } from '@angular/router';
 export class AccountpagePage implements OnInit {
 
   constructor(
-    private router: Router,
-    public alertController: AlertController,
-    public loadingController: LoadingController
+    private dataService: DataserviceService,
   ) { }
 
   ngOnInit() {
@@ -20,54 +17,16 @@ export class AccountpagePage implements OnInit {
 
   // Logo to Home Router
   goToHome() {
-    this.router.navigateByUrl('/tabs');
+    this.dataService.goToHome();
   }
 
   // LogOut Component
-  async doLogout() {
-    const alert = await this.alertController.create({
-      header: 'Log Out',
-      message: 'Are you sure you want to Log Out?',
-      buttons:
-      [
-        {
-          text: 'No',
-          role: 'cancel',
-          handler: () => {}
-        },
-        {
-          text: 'Yes',
-          handler: () => {
-            this.router.navigateByUrl('/login');
-          }
-        }
-       ]
-    });
-    return alert.present();
-   }
+  doLogout() {
+    this.dataService.doLogout();
+  }
 
-
-   async exitApp() {
-     const alert = await this.alertController.create({
-       header: 'Exit App',
-       message: 'Are you sure you want to Exit the App?',
-       buttons:
-       [
-         {
-           text: 'No',
-           role: 'cancel',
-           handler: () => {}
-         },
-         {
-           text: 'Yes',
-           handler: () => {
-             console.log('Exit App');
-             // tslint:disable-next-line: no-string-literal
-             navigator['app'].exitApp();
-           }
-         }
-        ]
-     });
-     return alert.present();
-   }
+  // Exit App Component
+  exitApp() {
+     this.dataService.exitApp();
+  }
 }

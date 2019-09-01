@@ -14,7 +14,7 @@
   <ion-card mode="md" class="welcome-card">
     
     <!-- Card Header for Product Details -->
-    <ion-card-header>
+    <ion-card-header tappable (click)="cakeCard = !cakeCard">
       
       <ion-img src="../assets/img/products/Snow Panda Cake.jpg"></ion-img>
 
@@ -25,7 +25,7 @@
     </ion-card-header>
     
     <!-- Card Content for Product Description -->
-    <ion-card-content>
+    <ion-card-content *ngIf="cakeCard">
       
       <p>Now that your app has been created, you'll want to start building out features and components. Check out some of the resources below for next steps.</p>
     

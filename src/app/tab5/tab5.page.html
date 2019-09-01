@@ -8,6 +8,25 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content padding>
+
+  <ion-item lines="none">
+
+    <ion-label>Product</ion-label>
+    
+    <ion-select mode="ios" placeholder="Select Product Category">
+    
+      <ion-select-option value="cake">Cake</ion-select-option>
+      <ion-select-option value="cupcake">CupCake</ion-select-option>
+      <ion-select-option value="cupcake">Brownies</ion-select-option>
+      <ion-select-option value="cupcake">Dessert In A Jar</ion-select-option>
+      <ion-select-option value="cupcake">Cookies</ion-select-option>
+      <ion-select-option value="cupcake">Macarons</ion-select-option>
+
+    </ion-select>
+  
+  </ion-item>
+
+  <ion-item *ngIf="value === 'cake'">Text</ion-item>
 
 </ion-content>

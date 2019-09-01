@@ -8,7 +8,7 @@
   </ion-segment>
       
   <!-- Login Details Field -->
-  <form class="login-form" padding>
+  <form class="login-form" (ngSubmit)="loginButton()" padding>
 
     <!-- Login Email ID Field -->
     <ion-item class="login-fields" lines="none">
@@ -29,12 +29,12 @@
     </ion-item>
 
     <!-- Login Button -->
-    <ion-segment padding><ion-button (click)="loginButton()" color="orange">Login</ion-button></ion-segment>
+    <ion-segment padding><ion-button type="submit" color="orange">Login</ion-button></ion-segment>
 
   </form>
   
     <!-- Segment for Social Logins -->
-    <ion-segment>
+    <!-- <ion-segment>
 
       <ion-button color="gmail"><ion-icon name="logo-googleplus"></ion-icon></ion-button>
   
@@ -42,7 +42,7 @@
   
       <ion-button color="twitter"><ion-icon name="logo-twitter"></ion-icon></ion-button>
       
-    </ion-segment>
+    </ion-segment> -->
     
     <!-- Sign Up Segment-->
     <p style="text-align: center;">New to Brown Crumbs?<a (click)="goToSignup()">Sign Up!</a></p>

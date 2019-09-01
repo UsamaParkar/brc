@@ -11,6 +11,7 @@ import { AppVersion } from '@ionic-native/app-version/ngx';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { IonicStorageModule } from '@ionic/storage';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 // tslint:disable-next-line: semicolon
@@ -24,11 +25,13 @@ import firebaseConfig from './firebase'
     BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule,
+    HttpClientModule,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireAuthModule,
     IonicStorageModule.forRoot()
   ],
   providers: [
+    HttpClient,
     StatusBar,
     SplashScreen,
     AppVersion,

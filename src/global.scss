@@ -138,6 +138,17 @@ ion-slides
     -webkit-transform: rotate(-45deg);
   }
 
+// Pager Active
+.swiper-pagination-bullet-active {
+    opacity: 1;
+    background: white;
+}
+
+// Pager Not Active
+.swiper-pagination-bullet {
+    --bullet-background: black;
+}
+
 // Bottom Tabs
 ion-tab-bar
 {

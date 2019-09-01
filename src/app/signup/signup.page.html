@@ -7,7 +7,7 @@
 <ion-content>
 
   <!-- Signup Form -->
-  <form class="signup-form" padding>
+  <form class="signup-form" (ngSubmit)="signUp()" padding>
     
     <!-- First Name Field -->
     <!-- <ion-item class="signup-fields" lines="none">
@@ -101,7 +101,7 @@
     </ion-segment>
   
     <!-- Submit Form Button -->
-    <ion-segment padding><ion-button (click)="signUp()" color="dark">Sign Up</ion-button></ion-segment>
+    <ion-segment padding><ion-button type="submit" color="dark">Sign Up</ion-button></ion-segment>
 
   </form>
 
@@ -109,7 +109,7 @@
     <ion-segment><p>Already have an Account?<a (click)="goToLogin()">Login</a></p></ion-segment>
     
     <!-- Segment for Social Logins -->
-    <ion-segment>
+    <!-- <ion-segment>
 
       <ion-button color="gmail"><ion-icon name="logo-googleplus"></ion-icon></ion-button>
 
@@ -117,6 +117,6 @@
 
       <ion-button color="twitter"><ion-icon name="logo-twitter"></ion-icon></ion-button>
     
-    </ion-segment>
+    </ion-segment> -->
     
 </ion-content>

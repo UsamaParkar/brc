@@ -1,5 +1,6 @@
-import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { NgModule } from '@angular/core';
+
 
 const routes: Routes = [
   {
@@ -13,7 +14,6 @@ const routes: Routes = [
   { path: 'accountpage', loadChildren: './accountpage/accountpage.module#AccountpagePageModule' },
   { path: 'signup', loadChildren: './signup/signup.module#SignupPageModule' },
   { path: 'cakes', loadChildren: './cakes/cakes.module#CakesPageModule' },
-  { path: 'navigation', loadChildren: './navigation/navigation.module#NavigationPageModule' },
   { path: 'addcustomer', loadChildren: './addcustomer/addcustomer.module#AddcustomerPageModule' },
   { path: 'existingcustomers', loadChildren: './existingcustomers/existingcustomers.module#ExistingcustomersPageModule' },
   { path: 'cupcakes', loadChildren: './cupcakes/cupcakes.module#CupcakesPageModule' },
@@ -25,10 +25,14 @@ const routes: Routes = [
   { path: 'standardaccountinfo', loadChildren: './standardaccountinfo/standardaccountinfo.module#StandardaccountinfoPageModule' },
   { path: 'premiumaccountinfo', loadChildren: './premiumaccountinfo/premiumaccountinfo.module#PremiumaccountinfoPageModule' },
 ];
+
+
 @NgModule({
   imports: [
     RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
   ],
   exports: [RouterModule]
 })
+
+
 export class AppRoutingModule {}

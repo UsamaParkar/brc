@@ -1,5 +1,5 @@
+import { DataserviceService } from '../services/dataservice.service';
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-tab4',
@@ -8,15 +8,10 @@ import { Router } from '@angular/router';
 })
 export class Tab4Page implements OnInit {
 
-  constructor(
-    private router: Router) { }
+  constructor( private dataService: DataserviceService) { }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
-  goToAccountPage()
-  // tslint:disable-next-line: one-line
-  {
-    this.router.navigateByUrl('accountpage');
-  }
+  goToAccountPage() { this.dataService.goToAccountPage(); }
+
 }

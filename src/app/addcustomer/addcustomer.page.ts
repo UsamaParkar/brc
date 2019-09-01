@@ -1,5 +1,5 @@
+import { DataserviceService } from '../services/dataservice.service';
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-addcustomer',
@@ -8,20 +8,15 @@ import { Router } from '@angular/router';
 })
 export class AddcustomerPage implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(
+    private dataService: DataserviceService) { }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   // Logo to Home Router
-  goToHome() {
-    this.router.navigateByUrl('/tabs');
-  }
+  goToHome() { this.dataService.goToHome(); }
 
-  goToAccountPage()
-  // tslint:disable-next-line: one-line
-  {
-    this.router.navigateByUrl('accountpage');
-  }
+  // Go to Account Page Icon
+  goToAccountPage() { this.dataService.goToAccountPage(); }
 
 }
