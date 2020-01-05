@@ -8,6 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BrowniesPage implements OnInit {
 
+  public browniesCard: boolean;
+
+
   constructor( private dataService: DataserviceService ) { }
 
   ngOnInit() { }

@@ -1,10 +1,12 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
 import { DataserviceService } from '../services/dataservice.service';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { AppVersion } from '@ionic-native/app-version/ngx';
 import { Platform, NavController } from '@ionic/angular';
 import { AngularFireAuth } from '@angular/fire/auth';
+import { Network } from '@ionic-native/network/ngx';
 import { Storage } from '@ionic/storage';
 import { auth } from 'firebase/app';
+
 
 
 @Component({
@@ -31,10 +33,12 @@ export class LoginPage implements OnInit, OnDestroy {
   constructor(
     private storage: Storage,
     private platform: Platform,
+    private network: Network,
     private appVersion: AppVersion,
     public afAuth: AngularFireAuth,
     private navCtrl: NavController,
     private dataService: DataserviceService) {
+      this.network
       this.checkStorageToken(); // Function to check Login Token
 
       // Code to get Dynamic App Version
@@ -76,39 +80,42 @@ export class LoginPage implements OnInit, OnDestroy {
     // Try_Catch block for checking if Login Is successful or not
     try {
       const res = await this.afAuth.auth.signInWithEmailAndPassword(email, password);
+      console.log("REs",res);
       if (res.operationType === 'signIn') {
         this.storage.set('token', this.email);
-        // console.log('Success', this.email);
+        console.log('Success', this.email);
       }
       this.navCtrl.navigateRoot('/tabs');
-    } catch (err) {
+    } 
+    catch (err) {
       let reply;
       reply = err;
       console.dir(reply);
 
 
-      // If Conditions for Displaying the Correct Error // Condition 1 - Empty Email // tslint:disable-next-line: one-line
+      // If Conditions for Displaying the Correct Error
+      // Condition 1 - Empty Email 
       if ( reply.message === 'signInWithEmailAndPassword failed: First argument "email" must be a valid string.' ) {
         this.dataService.Toast(reply.message);
       }
 
 
-      // tslint:disable-next-line: one-line // Condition 2 - Wrong/Invalid Email
+    // Condition 2 - Wrong/Invalid Email
       else if ( reply.message === 'The email address is badly formatted.' ) {
         this.dataService.Toast(reply.message);
       }
 
 
-      // tslint:disable-next-line: one-line // Condition 3 - Empty Password
+    // Condition 3 - Empty Password
       else if ( reply.message === 'signInWithEmailAndPassword failed: Second argument "password" must be a valid string.' ) {
         this.dataService.Toast(reply.message);
       }
 
 
-      // tslint:disable-next-line: one-line // tslint:disable-next-line: jsdoc-format // Condition 4 - Wrong/Inavlid User
-      else /** ( reply.code === 'auth/user-not-found' )*/ {
-        this.dataService.Toast(reply.message);
-      } // else {
+    // Condition 4 - Wrong/Inavlid User
+      // else /** ( reply.code === 'auth/user-not-found' )*/ {
+        // this.dataService.Toast(reply.message);
+      // } // else {
         // UnknownErrorToast.present();
       // }
     }

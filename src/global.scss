@@ -203,6 +203,19 @@ ion-tab-bar
     width: 15%;
 }
 
+// Account Page Profile Picture Action Sheet Header
+.action-sheet-title.sc-ion-action-sheet-md
+{
+    text-align: center;
+    color: black;
+}
+
+// Account Page Profile Picture Action Sheet Icons
+.action-sheet-icon.sc-ion-action-sheet-md
+{
+    color: black;
+}
+
 // Orders Page
 .current-order-segment
 {

@@ -8,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CookiesPage implements OnInit {
 
+  public cookiesCard: boolean;
+
   constructor(
     private dataService: DataserviceService) { }
 

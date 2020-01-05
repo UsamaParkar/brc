@@ -6,8 +6,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { SignupPage } from './signup.page';
-import { StandardaccountinfoPage } from '../standardaccountinfo/standardaccountinfo.page';
-import { PremiumaccountinfoPage } from '../premiumaccountinfo/premiumaccountinfo.page';
+// import { StandardaccountinfoPage } from '../standardaccountinfo/standardaccountinfo.page';
+// import { PremiumaccountinfoPage } from '../premiumaccountinfo/premiumaccountinfo.page';
 
 const routes: Routes = [
   {
@@ -23,8 +23,8 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [SignupPage, StandardaccountinfoPage, PremiumaccountinfoPage],
-  entryComponents: [StandardaccountinfoPage, PremiumaccountinfoPage],
+  declarations: [SignupPage], // PremiumaccountinfoPage, StandardaccountinfoPage
+  entryComponents: [], // PremiumaccountinfoPage, StandardaccountinfoPage
   schemas: [ CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA]
 })
 export class SignupPageModule {}

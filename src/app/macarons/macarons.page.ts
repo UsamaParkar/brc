@@ -8,6 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MacaronsPage implements OnInit {
 
+
+  public macaronsCard: boolean;
+  
+
   constructor(
     private dataService: DataserviceService) { }
 

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { ModalController, ToastController } from '@ionic/angular';
 import { StandardaccountinfoPage } from '../standardaccountinfo/standardaccountinfo.page';
 import { PremiumaccountinfoPage } from '../premiumaccountinfo/premiumaccountinfo.page';
@@ -17,7 +16,6 @@ export class SignupPage implements OnInit {
   // Variables for Signup
   email: '';
   password: '';
-  // tslint:disable-next-line: variable-name
   confirm_password: '';
 
   constructor(
@@ -42,6 +40,7 @@ export class SignupPage implements OnInit {
       // UserCreated.present();
       console.log('Success', res);
     } catch (error) {
+      this.dataService.Toast(error)
         console.dir(error);
 
         // Catch Error Conditions

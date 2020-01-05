@@ -8,6 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Tab5Page implements OnInit {
 
+  public value;
+
+  
   constructor( private dataService: DataserviceService ) { }
 
   ngOnInit() {}

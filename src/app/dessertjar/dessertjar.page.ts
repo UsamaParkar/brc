@@ -8,6 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DessertjarPage implements OnInit {
 
+  public dessertInAJarCard: boolean;
+
+
   constructor(
     private dataService: DataserviceService) { }
 

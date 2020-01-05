@@ -1,41 +1,57 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
-
+import { IonicStorageModule } from '@ionic/storage';
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
+
+// Plugins
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
-import { Calendar } from '@ionic-native/calendar/ngx';
-
+import { File } from '@ionic-native/file/ngx';
+import { FilePath } from '@ionic-native/file-path/ngx';
+import { WebView } from '@ionic-native/ionic-webview/ngx';
 import { AppVersion } from '@ionic-native/app-version/ngx';
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { IonicStorageModule } from '@ionic/storage';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
+import { Network } from '@ionic-native/network/ngx';
+
+
+// Angular Imports
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
-// tslint:disable-next-line: semicolon
-import firebaseConfig from './firebase'
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+
+
+// Firebase
+import { environment } from '../environments/environment.prod'
+
+// 
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+
+
 
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports:
-  [
+  imports: [
     BrowserModule,
+    AngularFireAuthModule,
+    HttpClientModule,
     IonicModule.forRoot(),
     AppRoutingModule,
-    HttpClientModule,
-    AngularFireModule.initializeApp(firebaseConfig),
-    AngularFireAuthModule,
-    IonicStorageModule.forRoot()
+    IonicStorageModule.forRoot(),
+    AngularFireModule.initializeApp(environment.firebaseConfig), // 
   ],
   providers: [
+    File,
+    Camera,
+    Network,
+    WebView,
+    FilePath,
     HttpClient,
+    AppVersion,
     StatusBar,
     SplashScreen,
-    AppVersion,
-    Calendar,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

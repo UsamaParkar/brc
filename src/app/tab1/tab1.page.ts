@@ -12,6 +12,8 @@ import { DataserviceService } from '../services/dataservice.service';
 })
 export class Tab1Page implements OnInit {
 
+  public collapseCard: boolean;
+
   event = { title: '', desc: '', startTime: '', endTime: '', allDay: false };
   calendar = { mode: 'month', currentDate: new Date() };
   minDate = new Date().toISOString();
@@ -19,7 +21,7 @@ export class Tab1Page implements OnInit {
   testfile: any[];
   viewTitle = '';
 
-  @ViewChild(CalendarComponent) myCal: CalendarComponent;
+  @ViewChild(CalendarComponent, {static: false}) myCal: CalendarComponent;
 
   constructor(
     private http: HttpClient,

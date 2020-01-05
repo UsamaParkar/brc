@@ -8,6 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CakesPage implements OnInit {
 
+  cakeCard: boolean;
+
+
   constructor( private dataService: DataserviceService ) { }
 
   ngOnInit() { }
