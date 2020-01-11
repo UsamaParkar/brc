@@ -18,6 +18,7 @@ import { Network } from '@ionic-native/network/ngx';
 // Angular Imports
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFirestore, AngularFirestoreModule } from '@angular/fire/firestore'
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 
@@ -36,6 +37,7 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     AngularFireAuthModule,
+    AngularFirestoreModule,
     HttpClientModule,
     IonicModule.forRoot(),
     AppRoutingModule,
@@ -52,6 +54,7 @@ import { AppComponent } from './app.component';
     AppVersion,
     StatusBar,
     SplashScreen,
+    AngularFirestore,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

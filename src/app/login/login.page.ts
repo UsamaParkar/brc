@@ -15,29 +15,35 @@ import { auth } from 'firebase/app';
   styleUrls: ['./login.page.scss'],
 })
 
+
+
 export class LoginPage implements OnInit, OnDestroy {
 
 
+
+
   // Variables for Login
-  email: '';
-  password: '';
-  logintoken;
-  // for storing the returned subscription
-  backButtonSubscription;
-  appVerNum;
   appName;
   errormsg;
+  appVerNum;
+  email: '';
+  logintoken;
+  password: '';  
   storagevariable;
+  backButtonSubscription;
+
+
 
 
   constructor(
+    private network: Network,
     private storage: Storage,
     private platform: Platform,
-    private network: Network,
-    private appVersion: AppVersion,
-    public afAuth: AngularFireAuth,
     private navCtrl: NavController,
-    private dataService: DataserviceService) {
+    private appVersion: AppVersion,
+    private afAuth: AngularFireAuth,
+    private dataService: DataserviceService
+  ) {
       this.network
       this.checkStorageToken(); // Function to check Login Token
 
@@ -51,6 +57,13 @@ export class LoginPage implements OnInit, OnDestroy {
       this.appVersion.getPackageName();
       this.appVersion.getVersionCode();
   }
+
+
+
+
+  ngOnInit() { }
+
+
 
 
   // Check Storage to see if the Logged in User's Token is available.
@@ -69,7 +82,7 @@ export class LoginPage implements OnInit, OnDestroy {
   }
 
 
-  ngOnInit() { }
+  
 
 
   async loginButton() {
@@ -122,7 +135,11 @@ export class LoginPage implements OnInit, OnDestroy {
   }
 
 
+
+  
   goToSignup() { this.dataService.goToSignup(); }
+
+
 
 
   ionViewDidEnter() {

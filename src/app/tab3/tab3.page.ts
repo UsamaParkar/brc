@@ -8,27 +8,30 @@ import { Component } from '@angular/core';
 })
 export class Tab3Page {
 
+
+  productsArray = [
+    {
+      name:'Cakes',
+    },
+    {
+      name:'Cupcakes'
+    },
+    {
+      name:'Brownies'
+    },
+    {
+      name:'Jar Cakes'
+    },
+    {
+      name:'Cookies'
+    },
+    {
+      name:'Macarons'
+    }
+  ]
+
   constructor( private dataService: DataserviceService ) {}
 
-  // Navigate to Account Page
-  goToAccountPage() { this.dataService.goToAccountPage(); }
-
-  // Navigate to Cakes Page
-  goToCakes() { this.dataService.goToCakes(); }
-
-  // Navigate to Cupcakes Page
-  goToCupCakes() { this.dataService.goToCupCakes(); }
-
-  // Navigate to Brownies Page
-  goToBrownies() { this.dataService.goToBrownies(); }
-
-  // Navigate to DessertJar Page
-  goToDessertJar() { this.dataService.goToDessertJar(); }
-
-  // Navigate to Cookies Page
-  goToCookies() { this.dataService.goToCookies(); }
-
-  // Navigate to Macarons Page
-  goToMacarons() { this.dataService.goToMacarons(); }
-
+  
+  
 }

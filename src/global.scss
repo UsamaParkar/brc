@@ -27,6 +27,8 @@
 @import "~@ionic/angular/css/flex-utils.css";
 @import "~@ionic/angular/css/display.css";
 
+
+
 // Ion-Slides
 ion-slides
 {
@@ -34,6 +36,10 @@ ion-slides
     width: 100%;
 }
 
+// ion-slides {
+//     --bullet-background: grey;
+//     --bullet-background-active: black;
+// }
 // Login Page
 .login-logo
 {
@@ -141,19 +147,22 @@ ion-slides
 // Pager Active
 .swiper-pagination-bullet-active {
     opacity: 1;
-    background: white;
+    background: black;
 }
 
 // Pager Not Active
 .swiper-pagination-bullet {
-    --bullet-background: black;
+    --bullet-background: grey;
 }
 
 // Bottom Tabs
-ion-tab-bar
-{
+ion-tab-bar{
     height: 8%;
     color: white;
+}
+
+ion-tab-button{
+    --ripple-color: #F8A406;
 }
 
 // Bottom Navigation Tab Label Size
@@ -161,12 +170,13 @@ ion-tab-bar
 {
     size: small;
     color: black;
+    font-family: sans-serif;
 }
 
 // Bottom Navigation Tab Size
 .tab-icons
 {
-    color: orange;
+    color: #F8A406;
     size: small;
 }
 
@@ -252,12 +262,6 @@ ion-tab-bar
     width: 100%;
 }
 
-.products-card
-{
-    height: auto;
-    width: 50%;
-}
-
 .card-titles
 {
     height: 100%;
@@ -276,4 +280,115 @@ ion-tab-bar
 .product-image
 {
     opacity: 1%;
+}
+
+.customers-page-parent-card{
+    -webkit-margin-start: 0px;
+    margin-inline-start: 0;
+    -webkit-margin-end: 0px;
+    margin-inline-end: 0;
+    padding: 4%;
+    border-radius: 50px 50px 0 0;
+    margin-bottom: 0;
+    --background: white;
+}
+
+.orders-page-background-card{
+    --background:#FAB300;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    height: 270px;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    --padding-start: var(--ion-padding, 0px);
+    --padding-end: var(--ion-padding, 0px);
+    --padding-top: var(--ion-padding, 0px);
+    --padding-bottom: var(--ion-padding, 0px);
+}
+
+.orders-page-title-wrapper{
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.orders-page-main-title{
+    color: black;
+    padding: 0 40px 0 40px;
+    font-family: sans-serif; 
+}
+
+.orders-page-sub-header{
+    color: black;
+    padding-top: 0;
+    padding-left: 40px; 
+    padding-right: 40px;
+    font-family: sans-serif;
+}
+.orders-page-account-btn{
+    margin-top: 12px;
+    --padding-start: 12px;
+    --padding-end: 12px;
+}
+.orders-page-slides-comp{
+    position: absolute;
+    top: 1px;
+    height: 430px;
+}
+
+.orders-page-orders-card{
+    position: absolute;
+    left: 20px;
+    top: 85px;
+    width: 350px;
+    height: 300px;
+    border-radius: 30px;
+    background-color: white;
+}
+
+.orders-page-order-category-img{
+    height: 100% !important;
+    width: 100% !important;
+}
+
+.products-page-header{
+    margin:0;
+    height: 130px;
+    padding: 0 35px;
+    --background: #F8A306;
+    border-bottom-left-radius: 90px;
+}
+
+.products-page-main-title{
+    color: white;
+    font-size: 36px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.products-page-subtitle{
+    margin: 0;
+    color: white;
+    font-size: 14px;
+}
+
+.products-page-products-card {
+    width: 44%;
+    height: 150px;
+    border-radius: 50px;
+}
+  
+.products-page-products-container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 16px 16px 16px 24px;
+}
+  
+.products-page-products-container>div {
+flex: 0 50%;
+/*demo*/
+border: red solid;
+box-sizing:border-box
 }

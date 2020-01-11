@@ -1,9 +1,9 @@
 import { Component, OnInit, ViewChild, Inject, LOCALE_ID } from '@angular/core';
-import { ActionSheetController, AlertController } from '@ionic/angular';
-import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { AlertController } from '@ionic/angular';
 import { CalendarComponent } from 'ionic2-calendar/calendar';
 import { formatDate } from '@angular/common';
 import { DataserviceService } from '../services/dataservice.service';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-tab1',
@@ -23,19 +23,62 @@ export class Tab1Page implements OnInit {
 
   @ViewChild(CalendarComponent, {static: false}) myCal: CalendarComponent;
 
+
+  ordersArray = [
+    {
+      product:'Cake',
+      size:'1kg',
+      customerName:'Chris Green',
+      deliveryDate:'19-04-2020',
+      url:'../../assets/img/products/Snow Panda Cake.jpg',
+    },
+    {
+      product:'CupCakes',
+      size:'6',
+      customerName:'Baz Mccullum',
+      deliveryDate:'12-09-2020',
+      url:'../../assets/img/Cupcakes.jpeg',
+    },
+    {
+      product:'Brownies',
+      size:'12',
+      customerName:'Lee Sharp',
+      deliveryDate:'01-01-2020',
+      url:'../../assets/img/products/Chocolate Brownie.jpg',
+    },
+    {
+      product:'Macarons',
+      size:'6',
+      customerName:'Patt Cummins',
+      deliveryDate:'10-07-2020',
+      url:'../../assets/img/products/Lemon Macarons.jpg',
+    },
+    {
+      product:'Cookie',
+      size:'6',
+      customerName:'Tom Banton',
+      deliveryDate:'10-07-2020',
+      url:'../../assets/img/products/Cookie.jpg',
+    }
+  ]
+
   constructor(
-    private http: HttpClient,
+    // private http: HttpClient,
+    public authService: AuthService,
     private alertCtrl: AlertController,
     private dataService: DataserviceService,
-    @Inject(LOCALE_ID) private locale: string) {
-      this.http.get('assets/test.json').subscribe(result => {
-          // tslint:disable-next-line: no-string-literal
-          this.testfile = result['customer'];
-        });
-    }
+    @Inject(LOCALE_ID) private locale: string
+  ) {}
 
-  ngOnInit() { // this.resetEvent();
+
+
+  ngOnInit() { 
+    this.authService.checkDB(); 
   }
+
+
+
+
 
   resetEvent() {
     this.event = {
@@ -46,6 +89,9 @@ export class Tab1Page implements OnInit {
       allDay: false
     };
   }
+
+
+
 
   // Adding a New Event
   addEvent() {
@@ -73,6 +119,10 @@ export class Tab1Page implements OnInit {
     this.resetEvent();
   }
 
+
+
+
+
   async onEventSelected(event) {
     // tslint:disable-next-line: prefer-const // Use Angular date pipe for conversion
     let start = formatDate(event.startTime, 'medium', this.locale);
@@ -89,9 +139,17 @@ export class Tab1Page implements OnInit {
     alert.present();
   }
 
+
+
+
+
   onViewTitleChanged(title) {
     this.viewTitle = title;
   }
+
+
+
+
 
   onTimeSelected(ev) {
     // tslint:disable-next-line: prefer-const
@@ -101,11 +159,16 @@ export class Tab1Page implements OnInit {
     this.event.endTime = (selected.toISOString());
   }
 
+
+
+
   // Navigate to Account Page
   goToAccountPage() { this.dataService.goToAccountPage(); }
 
+  
   // Navigate to Order Card Details Page
   goToOrderDetails() { this.dataService.goToOrderDetails(); }
+
 
   // Navigate to New Order Page
   goToNewOrder() { this.dataService.goToNewOrder(); }

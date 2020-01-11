@@ -1,27 +1,41 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-avatar class="top-toolbar-avatar">
-      <ion-img src="../assets/img/tbc.png"></ion-img>
-    </ion-avatar>
-    <ion-title class="avatar-toolbar-title">Customers</ion-title>
-    <ion-icon (click)="goToAccountPage()" class="account-logo" slot="end" size="large" color="dark" name="contact"></ion-icon>
-  </ion-toolbar>
-</ion-header>
+<ion-content style="--background: #F8A306">
 
-<ion-content>
+  
+  <h1 style="font-size:36px !important; color: white; font-family: sans-serif; padding:20px 40px 0px 40px;"><b>Customers</b></h1>
 
-  <!-- Customer Searchbox-->
-    <ion-searchbar ionChange="getUser()" showCancelButton="focus" placeholder="Search for a Customer" mode="ios" padding>
+  <div style="width: 100%; display: flex; padding:15px;">
+    
+    <ion-searchbar style="width: 80%; --background:white" ionChange="getUser()" showCancelButton="focus" placeholder="Search for a Customer" mode="ios" padding></ion-searchbar>
+
+    <ion-button style="margin-top: 13px;" (click)="addNewCustomer()" color="dark"><ion-icon style="font-size: 15px;" name="person-add"></ion-icon></ion-button>
+
+  </div>
+
+
+  <!-- Customers Content -->
+  <ion-card class="customers-page-parent-card">
+
+    <ion-card *ngFor="let customer of customersArray" class="ion-padding" style="display: flex; border-radius: 60px; margin: 20px 10px 20px 10px;">
+    
+      <ion-avatar style="height:50px; width: 50px;">
+        
+        <img src={{customer.imgUrl}}>
       
-    </ion-searchbar>
+      </ion-avatar>
+      
+      <div style="display: flex; justify-content: space-between; align-items: center; padding: 0 0 0 4%; width: 82%;">
+    
+        <ion-label style="color: black; font-size: 15px; font-stretch: extra-expanded;">{{ customer.name }}</ion-label>
+    
+        <ion-button color="orange" shape="round" style="--padding-start: 16px !important; --padding-end: 16px !important;">
+          <ion-icon name="podium" color="light" style="padding-right: 5px;"></ion-icon>
+          <ion-label>{{ customer.totalOrders }}</ion-label>
+        </ion-button>
+    
+      </div>
+    
+    </ion-card>
 
-  <!-- Customer Buttons -->
-  <ion-segment class="customer-buttons">
-
-    <ion-button (click)="addNewCustomer()" color="dark"><ion-icon name="person-add"></ion-icon></ion-button>
-
-    <ion-button (click)="goToCustomer()" color="dark"><ion-icon name="contacts"></ion-icon></ion-button>
-
-  </ion-segment>
+  </ion-card>
 
 </ion-content>

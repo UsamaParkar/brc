@@ -1,40 +1,67 @@
-<ion-header>
+<!-- <ion-header>
   <ion-toolbar>
     <ion-avatar class="top-toolbar-avatar">
       <ion-img src="../assets/img/tbc.png"></ion-img>
     </ion-avatar>
     <ion-title class="avatar-toolbar-title">Orders</ion-title>
-    <ion-icon (click)="goToAccountPage()" class="account-logo" slot="end" size="large" color="dark" name="contact"></ion-icon>
+    <ion-icon class="account-logo" slot="end" size="large" color="dark" name="contact"></ion-icon>
   </ion-toolbar>
-</ion-header>
+</ion-header> -->
 
-<ion-content padding>
+<ion-content>
 
-  <!-- Slides Component For Existing Order -->
-  <ion-slides pager="true" style="height: 250px;">
+  
+  <ion-card class="orders-page-background-card">
+
+    <div class="orders-page-title-wrapper">
+      
+      <h1 class="orders-page-main-title"><b>Upcoming Orders</b></h1>
+    
+      <ion-button (click)="goToAccountPage()" shape="round" color="light" class="orders-page-account-btn">
+        <ion-icon name="ios-contact"></ion-icon>
+      </ion-button>
+    </div>
+
+    <ion-card-header class="orders-page-sub-header">Take a look at Orders you have to complete</ion-card-header>
+
+  </ion-card>
+  
+
+  <!-- Upcoming Orders -->
+  <ion-slides pager="true" class="orders-page-slides-comp">
 
     <!-- For Loop for mulitple Order's  -->
-    <ion-slide *ngFor="let customer of testfile">
+    <ion-slide *ngFor="let order of ordersArray">
       
       <!-- Card to go into Details of that Order -->
-      <ion-card (click)="goToOrderDetails()" padding color="orange">
+      <ion-card (click)="goToOrderDetails()" class="orders-page-orders-card">
 
-        
-        <ion-card-title padding>
+        <!-- <img src="../../assets/img/wave.svg" /> -->
+
+        <div style="position: absolute; top: 200px; left: 20px;">
           
-          <b>Current Order: </b> {{ customer.first_name + ' ' + customer.last_name }}
-        
-        </ion-card-title>
+          <ion-card-title style="font-weight: bold; font-size: 25px; padding: 5px 0 5px 0;text-align: left;">{{order.customerName}}</ion-card-title>
+
+          <ion-card-subtitle style="font-size: 15px; padding: 5px 0 5px 0; text-align: left;">
+            
+            {{order.product}}
+          
+          </ion-card-subtitle>
+
+
+        </div>
+
+        <!-- 
+
+
+        </ion-card> -->
+        <!-- 
 
         
         
         <ion-segment class="current-order-segment">
           
-          <ion-card-subtitle padding>
-            
-            Product: {{ customer.product }}
           
-          </ion-card-subtitle>
         
         </ion-segment>
 
@@ -59,7 +86,7 @@
         
           </ion-card-subtitle>
 
-        </ion-segment>
+        </ion-segment> -->
 
       
       </ion-card>
@@ -69,97 +96,103 @@
   </ion-slides>
 
 
-  <!-- Calendar For Keeping Track of Orders -->
-  <ion-card class="ion-card-for-calendar">
-    
-    <!-- Segment for Calendar Title -->
-    <ion-segment style="display: flex; justify-content:space-between; background-color: black;">
-      
-      <!-- Calendar Title -->
-      <ion-card-header style="color: white;">Orders Schedule</ion-card-header>
 
-      <!-- Button for Adding New Order -->
-      <ion-button size="small" color="dark" tappable (click)="collapseCard = !collapseCard" style="margin-top: 10px; margin-right: 10px;">
+
+
+
+    <!-- Calendar For Keeping Track of Orders -->
+    <!-- <ion-card class="ion-card-for-calendar"> -->
+    
+      <!-- Segment for Calendar Title -->
+      <!-- <ion-segment style="display: flex; justify-content:space-between; background-color: black;"> -->
+        
+        <!-- Calendar Title -->
+        <!-- <ion-card-header style="color: white;">Orders Schedule</ion-card-header> -->
+  
+        <!-- Button for Adding New Order -->
+        <!-- <ion-button size="small" color="dark" tappable (click)="collapseCard = !collapseCard" style="margin-top: 10px; margin-right: 10px;"> -->
+            
+          <!-- <ion-icon name="add"></ion-icon> -->
           
-        <ion-icon name="add"></ion-icon>
+        <!-- </ion-button> -->
+  
+      <!-- </ion-segment> -->
+      <!-- End of First Segment for Calendar -->
+  
+      <!-- Conditional Card to Add a Event in your Calendar -->
+      <!-- <ion-card *ngIf="collapseCard" padding> -->
+  
+        <!-- Label for Event Title -->
+        <!-- <ion-item lines="none">
+  
+          <ion-label>Title:</ion-label>
+          
+          <ion-input type="text" [(ngModel)]="event.title"></ion-input>
+  
+        </ion-item> -->
+  
+        <!-- Label for Event Description -->
+        <!-- <ion-item lines="none">
+      
+          <ion-label>Description:</ion-label>
+          
+          <ion-input type="text" [(ngModel)]="event.desc" lines></ion-input>
         
-      </ion-button>
-
-    </ion-segment>
-    <!-- End of First Segment for Calendar -->
-
-    <!-- Conditional Card to Add a Event in your Calendar -->
-    <ion-card *ngIf="collapseCard" padding>
-
-      <!-- Label for Event Title -->
-      <ion-item lines="none">
-
-        <ion-label>Title:</ion-label>
+        </ion-item> -->
+  
+        <!-- Item to Add The Event's Start Date -->
+        <!-- <ion-item lines="none">
+          
+          <ion-label>Start</ion-label>
+          
+          <ion-datetime displayFormat="MM/DD/YYYY HH:mm" pickerFormat="MMM D:HH:mm" [(ngModel)]="event.startTime" [min]="minDate"></ion-datetime>
         
-        <ion-input type="text" [(ngModel)]="event.title"></ion-input>
-
-      </ion-item>
-
-      <!-- Label for Event Description -->
-      <ion-item lines="none">
-    
-        <ion-label>Description:</ion-label>
+        </ion-item> -->
         
-        <ion-input type="text" [(ngModel)]="event.desc" lines></ion-input>
-      
-      </ion-item>
-
-      <!-- Item to Add The Event's Start Date -->
-      <ion-item lines="none">
+        <!-- Item to Add The Event's End Date -->
+        <!-- <ion-item lines="none">
+          
+          <ion-label>End</ion-label>
+          
+          <ion-datetime displayFormat="MM/DD/YYYY HH:mm" pickerFormat="MMM D:HH:mm" [(ngModel)]="event.endTime" [min]="minDate"></ion-datetime>
         
-        <ion-label>Start</ion-label>
+        </ion-item> -->
         
-        <ion-datetime displayFormat="MM/DD/YYYY HH:mm" pickerFormat="MMM D:HH:mm" [(ngModel)]="event.startTime" [min]="minDate"></ion-datetime>
-      
-      </ion-item>
-      
-      <!-- Item to Add The Event's End Date -->
-      <ion-item lines="none">
+        <!-- Item to Add the Event for the Entire Day -->
+        <!-- <ion-item lines="none">
         
-        <ion-label>End</ion-label>
+          <ion-label>All Day?</ion-label>
         
-        <ion-datetime displayFormat="MM/DD/YYYY HH:mm" pickerFormat="MMM D:HH:mm" [(ngModel)]="event.endTime" [min]="minDate"></ion-datetime>
+          <ion-checkbox [(ngModel)]="event.allDay"></ion-checkbox>
+        
+        </ion-item> -->
+        
+        <!-- Button to Submit Event -->
+        <!-- <ion-button fill="outline" expand="block" (click)="addEvent()" [disabled]="event.title == ''">Add Event</ion-button>
+  
+      </ion-card> -->
+  
+      <!-- Month -->
+      <!-- <ion-item><b>{{ viewTitle }}</b></ion-item> -->
       
-      </ion-item>
-      
-      <!-- Item to Add the Event for the Entire Day -->
-      <ion-item lines="none">
-      
-        <ion-label>All Day?</ion-label>
-      
-        <ion-checkbox [(ngModel)]="event.allDay"></ion-checkbox>
-      
-      </ion-item>
-      
-      <!-- Button to Submit Event -->
-      <ion-button fill="outline" expand="block" (click)="addEvent()" [disabled]="event.title == ''">Add Event</ion-button>
-
+      <!-- Calendar Component -->
+      <!-- <calendar class="monthview-selected"
+        
+        [eventSource]="eventSource"
+        [calendarMode]="calendar.mode"
+        [currentDate]="calendar.currentDate"
+        (onEventSelected)="onEventSelected($event)"
+        (onTitleChanged)="onViewTitleChanged($event)"
+        (onTimeSelected)="onTimeSelected($event)"
+        startHour="0"
+        endHour="24"
+        step="30"
+        startingDayWeek="1">
+  
+      </calendar>
+  
     </ion-card>
+   -->
 
-    <!-- Month -->
-    <ion-item><b>{{ viewTitle }}</b></ion-item>
-    
-    <!-- Calendar Component -->
-    <calendar class="monthview-selected"
-      
-      [eventSource]="eventSource"
-      [calendarMode]="calendar.mode"
-      [currentDate]="calendar.currentDate"
-      (onEventSelected)="onEventSelected($event)"
-      (onTitleChanged)="onViewTitleChanged($event)"
-      (onTimeSelected)="onTimeSelected($event)"
-      startHour="0"
-      endHour="24"
-      step="30"
-      startingDayWeek="1">
-
-    </calendar>
-
-  </ion-card>
 
 </ion-content>

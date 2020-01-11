@@ -1,75 +1,29 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-avatar class="top-toolbar-avatar">
-      <ion-img src="../assets/img/tbc.png"></ion-img>
-    </ion-avatar>
-    <ion-title class="avatar-toolbar-title">Products</ion-title>
-    <ion-icon (click)="goToAccountPage()" class="account-logo" slot="end" size="large" color="dark" name="contact"></ion-icon>
-  </ion-toolbar>
-</ion-header>
+<ion-content>
 
-<ion-content padding>
+  <ion-card class="products-page-header">
 
-  <!-- List for Product Categories-->
-  <ion-list padding>
+    <h2 class="products-page-main-title">Products</h2>
 
-    <!-- Products Line 1-->
-    <ion-segment class="products-segment">
-      
-      <!-- Cakes Card -->
-      <ion-card (click)="goToCakes()" class="products-card" mode="md">
-        
-        <img class="card-image" src="../../assets/img/Cakes.jpeg"/>
-        
-      </ion-card>
-      
-      <!-- Cupcakes Card -->
-      <ion-card (click)="goToCupCakes()" class="products-card">
-  
-        <img class="card-image" src="../../assets/img/Cupcakes.jpeg"/>
-  
-      </ion-card>
+    <p class="products-page-subtitle">Browse through all your products here..</p>
+
+  </ion-card>
+
+
+  <div class="products-page-products-container">
     
-    </ion-segment>
-
-    <!-- Line 2 -->
-    <ion-segment class="products-segment">
+    <!-- Cakes Card -->
+    <ion-card *ngFor="let product of productsArray" class="products-page-products-card">
       
-      <!-- Brownie Card -->
-      <ion-card (click)="goToBrownies()" class="products-card">
-  
-        <img class="card-image" src="../../assets/img/Brownie.jpeg"/>
-  
-      </ion-card>
-      
-      <!-- Dessert In a Jar Card -->
-      <ion-card (click)="goToDessertJar()" class="products-card">
-  
-        <img class="card-image" src="../../assets/img/Jar Cakes.jpeg"/>
-  
-      </ion-card>
+      <!-- <img src="{{ product.categoryImage }}" /> -->
+      <h5 style="color: black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%; margin-top: 0; margin-bottom: 0;"><b>{{ product.name }}</b></h5>
     
-    </ion-segment>
-
-    <!-- Line 3 -->
-    <ion-segment class="products-segment">
-      
-      <!-- Cakes Card -->
-      <ion-card (click)="goToCookies()" class="products-card" mode="md">
-          
-        <img class="card-image" src="../../assets/img/Cookie.jpeg"/>
-          
-      </ion-card>
-        
-      <!-- Cupcakes Card -->
-      <ion-card (click)="goToMacarons()" class="products-card">
-  
-        <img class="card-image" src="../../assets/img/Macarons.jpeg"/>
+    </ion-card>
     
-      </ion-card>
-      
-    </ion-segment>
+  </div>
 
-  </ion-list>
-
+  
 </ion-content>
