@@ -1,4 +1,4 @@
-import { DataserviceService } from '../services/dataservice.service';
+import { DataserviceService } from '../../services/dataservice.service';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { AppVersion } from '@ionic-native/app-version/ngx';
 import { Platform, NavController } from '@ionic/angular';

@@ -3,7 +3,7 @@ import { AlertController } from '@ionic/angular';
 import { CalendarComponent } from 'ionic2-calendar/calendar';
 import { formatDate } from '@angular/common';
 import { DataserviceService } from '../services/dataservice.service';
-import { AuthService } from '../auth.service';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-tab1',

@@ -1,14 +1,12 @@
-import { DataserviceService } from '../services/dataservice.service';
+import { DataserviceService } from '../../services/dataservice.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-cookies',
-  templateUrl: './cookies.page.html',
-  styleUrls: ['./cookies.page.scss'],
+  selector: 'app-existingcustomers',
+  templateUrl: './existingcustomers.page.html',
+  styleUrls: ['./existingcustomers.page.scss'],
 })
-export class CookiesPage implements OnInit {
-
-  public cookiesCard: boolean;
+export class ExistingcustomersPage implements OnInit {
 
   constructor(
     private dataService: DataserviceService) { }

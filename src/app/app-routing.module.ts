@@ -8,26 +8,23 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   { path: '', loadChildren: './tabs/tabs.module#TabsPageModule' },
-  { path: 'welcomepage', loadChildren: './welcomepage/welcomepage.module#WelcomepagePageModule' },
-  { path: 'login', loadChildren: './login/login.module#LoginPageModule' },
-  { path: 'accountpage', loadChildren: './accountpage/accountpage.module#AccountpagePageModule' },
-  { path: 'signup', loadChildren: './signup/signup.module#SignupPageModule' },
-  { path: 'cakes', loadChildren: './cakes/cakes.module#CakesPageModule' },
-  { path: 'addcustomer', loadChildren: './addcustomer/addcustomer.module#AddcustomerPageModule' },
-  { path: 'existingcustomers', loadChildren: './existingcustomers/existingcustomers.module#ExistingcustomersPageModule' },
-  { path: 'cupcakes', loadChildren: './cupcakes/cupcakes.module#CupcakesPageModule' },
-  { path: 'orderdetails', loadChildren: './orderdetails/orderdetails.module#OrderdetailsPageModule' },
-  { path: 'brownies', loadChildren: './brownies/brownies.module#BrowniesPageModule' },
-  { path: 'dessertjar', loadChildren: './dessertjar/dessertjar.module#DessertjarPageModule' },
-  { path: 'cookies', loadChildren: './cookies/cookies.module#CookiesPageModule' },
-  { path: 'macarons', loadChildren: './macarons/macarons.module#MacaronsPageModule' },
-  { path: 'standardaccountinfo', loadChildren: './standardaccountinfo/standardaccountinfo.module#StandardaccountinfoPageModule' },
-  { path: 'premiumaccountinfo', loadChildren: './premiumaccountinfo/premiumaccountinfo.module#PremiumaccountinfoPageModule' },
+  { path: 'welcomepage', loadChildren: './Pages/welcomepage/welcomepage.module#WelcomepagePageModule' },
+  { path: 'login', loadChildren: './Pages/login/login.module#LoginPageModule' },
+  { path: 'accountpage', loadChildren: './Pages/accountpage/accountpage.module#AccountpagePageModule' },
+  { path: 'signup', loadChildren: './Pages/signup/signup.module#SignupPageModule' },
+  { path: 'addcustomer', loadChildren: './Pages/addcustomer/addcustomer.module#AddcustomerPageModule' },
+  { path: 'existingcustomers', loadChildren: './Pages/existingcustomers/existingcustomers.module#ExistingcustomersPageModule' },
+  { path: 'orderdetails', loadChildren: './Pages/orderdetails/orderdetails.module#OrderdetailsPageModule' },
+  { path: 'standardaccountinfo', loadChildren: './Modals/standardaccountinfo/standardaccountinfo.module#StandardaccountinfoPageModule' },
+  { path: 'premiumaccountinfo', loadChildren: './Modals/premiumaccountinfo/premiumaccountinfo.module#PremiumaccountinfoPageModule' },
 ];
+
+
 @NgModule({
   imports: [
     RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
   ],
   exports: [RouterModule]
 })
+
 export class AppRoutingModule {}

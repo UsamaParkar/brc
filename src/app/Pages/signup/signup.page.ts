@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController, ToastController } from '@ionic/angular';
-import { StandardaccountinfoPage } from '../standardaccountinfo/standardaccountinfo.page';
-import { PremiumaccountinfoPage } from '../premiumaccountinfo/premiumaccountinfo.page';
+import { StandardaccountinfoPage } from '../../Modals/standardaccountinfo/standardaccountinfo.page';
+import { PremiumaccountinfoPage } from '../../Modals/premiumaccountinfo/premiumaccountinfo.page';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { auth } from 'firebase/app';
-import { DataserviceService } from '../services/dataservice.service';
+import { DataserviceService } from '../../services/dataservice.service';
 
 @Component({
   selector: 'app-signup',
